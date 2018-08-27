@@ -1,7 +1,6 @@
-
+from SocketScripts import SocketConnect
 if __name__ == '__main__':
     try:
-        v = 0
-        #start server
+        SocketConnect.ClientThread
     except KeyboardInterrupt:
         exit(0)

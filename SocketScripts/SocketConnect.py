@@ -1,6 +1,8 @@
 import socket
 from threading import Thread
 from socketserver import ThreadingMixIn
+from SocketScripts import SocketManage
+from SocketScripts import SocketHelper as helper
 
 
 # Multithreaded Python server : TCP Server Socket Thread Pool
@@ -15,11 +17,16 @@ class ClientThread(Thread):
     def run(self):
         while True:
             data = conn.recv(2048)
+            data = helper.convertToString(data)
             print ("Server received data:", data)
+            #data thread starting
+            newDataThread = SocketManage.SocketManage(data)
+            newDataThread.start()
+            threads.append(newDataThread)
             MESSAGE = input("Multithreaded Python server : Enter Response from Server/Enter exit:")
             if MESSAGE == 'exit':
                 break
-            conn.send(MESSAGE)  # echo
+            conn.send(helper.convertToBytes(MESSAGE))  # echo
 
 
 # Multithreaded Python server : TCP Server Socket Program Stub
