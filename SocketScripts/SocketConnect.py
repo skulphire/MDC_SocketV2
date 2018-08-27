@@ -18,13 +18,20 @@ class ClientThread(Thread):
     def run(self):
         while True:
             try:
-                data = conn.recv(2048)
+                conn.settimeout(0)
+                data = conn.recv(1024)
+                print("__has data")
             except Exception:
                 continue
             if data:
+                print(data)
                 data = helper.convertToString(data)
                 #print ("Server received data:", data)
                 self.smanage.testdata(data,conn)
+            else:
+                print("__Else")
+                tcpServer.close()
+                break
             # MESSAGE = input("Multithreaded Python server : Enter Response from Server/Enter exit:")
             # if MESSAGE == 'exit':
             #     break
@@ -37,13 +44,17 @@ BUFFER_SIZE = 20  # Usually 1024, but we need quick response
 
 tcpServer = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 tcpServer.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+tcpServer.settimeout(0)
 tcpServer.bind((TCP_IP, TCP_PORT))
 threads = []
 
 while True:
-    tcpServer.listen(4)
+    tcpServer.listen(1)
     print ("Multithreaded Python server : Waiting for connections from TCP clients...")
-    (conn, (ip, port)) = tcpServer.accept()
+    try:
+        (conn, (ip, port)) = tcpServer.accept()
+    except Exception:
+        continue
     newthread = ClientThread(ip, port)
     newthread.start()
     threads.append(newthread)
