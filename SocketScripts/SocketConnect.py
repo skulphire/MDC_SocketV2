@@ -12,6 +12,7 @@ class ClientThread(Thread):
         Thread.__init__(self)
         self.ip = ip
         self.port = port
+        self.smanage = SocketManage.SocketManage()
         print ("[+] New server socket thread started for " + ip + ":" + str(port))
 
     def run(self):
@@ -19,15 +20,11 @@ class ClientThread(Thread):
             data = conn.recv(2048)
             data = helper.convertToString(data)
             print ("Server received data:", data)
-            #data thread starting
-            newDataThread = SocketManage.SocketManage(data)
-            newDataThread.start()
-            threads.append(newDataThread)
-            MESSAGE = input("Multithreaded Python server : Enter Response from Server/Enter exit:")
-            if MESSAGE == 'exit':
-                break
-            conn.send(helper.convertToBytes(MESSAGE))  # echo
-
+            self.smanage.testdata(data,conn)
+            # MESSAGE = input("Multithreaded Python server : Enter Response from Server/Enter exit:")
+            # if MESSAGE == 'exit':
+            #     break
+            # conn.send(helper.convertToBytes(MESSAGE))  # echo
 
 # Multithreaded Python server : TCP Server Socket Program Stub
 TCP_IP = '0.0.0.0'
