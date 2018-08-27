@@ -17,10 +17,14 @@ class ClientThread(Thread):
 
     def run(self):
         while True:
-            data = conn.recv(2048)
-            data = helper.convertToString(data)
-            print ("Server received data:", data)
-            self.smanage.testdata(data,conn)
+            try:
+                data = conn.recv(2048)
+            except Exception:
+                continue
+            if data:
+                data = helper.convertToString(data)
+                #print ("Server received data:", data)
+                self.smanage.testdata(data,conn)
             # MESSAGE = input("Multithreaded Python server : Enter Response from Server/Enter exit:")
             # if MESSAGE == 'exit':
             #     break

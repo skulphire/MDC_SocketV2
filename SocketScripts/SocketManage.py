@@ -22,62 +22,59 @@ class SocketManage(object):
             print("no files found")
 
     def testdata(self, data, client):
-        while True:
-            if data:
-                if (client not in self.connections or self.areUsersLoggedIn[self.connections[client]] is False):
-                    isValidUser, user = self.checkIfLoggedIn(data)
-                else:
-                    isValidUser = False
-                    user = ""
-                if(isValidUser and not user == "Login"):
-                    self.connections[client] = user
-                    self.clientIP[user] = client
-                    print ("Logged in")
-                    print("   %s>> %s" % (self.connections[client], data))
-                    client.send(helper.convertToBytes("Valid"))
-                #if already logged in
-                elif client in self.connections and self.areUsersLoggedIn[self.connections[client]] is True:
-                    #sendto:badge:message
-                    if "sendto" in data.lower():
-                        sending = data.split(":")
-                        if sending[1] in self.clientIP:
-                            receiver = self.clientIP[sending[1]]
-                            receiver.send(helper.convertToBytes(sending[2]))
-                            client.send(helper.convertToBytes("Valid"))
-                            print("Valid Data")
-                        else:
-                            client.send(helper.convertToBytes("Invalid"))
-                            print("Invalid Data")
-                    #get user list
-                    elif "userlist" in data.lower():
-                        sending = "userlist"
-                        for user in self.validUsers:
-                            if user is not "":
-                                sending = sending+":"+user
-                        client.send(helper.convertToBytes(sending))
-                    #get users online
-                    elif "loggedinusers" in data.lower():
-                        sending = "usersonline"
-                        for user in self.connections:
-                            if(self.areUsersLoggedIn[user]):
-                                sending = sending+":"+user
-                        client.send(helper.convertToBytes(sending))
-                    else:
-                        print("   %s>> %s" % (self.connections[client], data))
-                        client.send(helper.convertToBytes("rec"))
-                #if user is logged on elsewhere
-                else:
-                    try:
-                        if(self.areUsersLoggedIn[self.connections[client]] is True):
-                            print("Client already logged in")
-                            self.closingClient(client, "Already Logged in")
-                            break
-                    except:
-                        continue
+        if data:
+            if (client not in self.connections or self.areUsersLoggedIn[self.connections[client]] is False):
+                isValidUser, user = self.checkIfLoggedIn(data)
             else:
-                print("no")
-                self.closingClient(client, "Disconnect")
-                break
+                isValidUser = False
+                user = ""
+            if(isValidUser and not user == "Login"):
+                self.connections[client] = user
+                self.clientIP[user] = client
+                print ("Logged in")
+                print("   %s>> %s" % (self.connections[client], data))
+                client.send(helper.convertToBytes("Valid"))
+            #if already logged in
+            elif client in self.connections and self.areUsersLoggedIn[self.connections[client]] is True:
+                #sendto:badge:message
+                if "sendto" in data.lower():
+                    sending = data.split(":")
+                    if sending[1] in self.clientIP:
+                        receiver = self.clientIP[sending[1]]
+                        receiver.send(helper.convertToBytes(sending[2]))
+                        client.send(helper.convertToBytes("Valid"))
+                        print("Valid Data")
+                    else:
+                        client.send(helper.convertToBytes("Invalid"))
+                        print("Invalid Data")
+                #get user list
+                elif "userlist" in data.lower():
+                    sending = "userlist"
+                    for user in self.validUsers:
+                        if user is not "":
+                            sending = sending+":"+user
+                    client.send(helper.convertToBytes(sending))
+                #get users online
+                elif "loggedinusers" in data.lower():
+                    sending = "usersonline"
+                    for user in self.connections:
+                        if(self.areUsersLoggedIn[user]):
+                            sending = sending+":"+user
+                    client.send(helper.convertToBytes(sending))
+                else:
+                    print("   %s>> %s" % (self.connections[client], data))
+                    client.send(helper.convertToBytes("rec"))
+            #if user is logged on elsewhere
+            else:
+                try:
+                    if(self.areUsersLoggedIn[self.connections[client]] is True):
+                        print("Client already logged in")
+                        self.closingClient(client, "Already Logged in")
+                except Exception:
+                    print("Invalid Input")
+                    self.closingClient(client, "Invalid Input")
+        else:
+            self.closingClient(client, "Disconnect")
 
     def clearDictsOfClient(self,client):
         print("Removing user")

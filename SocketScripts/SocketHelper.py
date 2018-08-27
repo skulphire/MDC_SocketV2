@@ -1,5 +1,3 @@
-
-
 def convertToString(bite):
     str = bite.decode("utf-8")
     return str
