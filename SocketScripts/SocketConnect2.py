@@ -16,6 +16,7 @@ class ThreadedServer(object):
         self.tcpServer.bind((self.ip, self.port))
         self.tcpServer.listen(1)
         print("awating connections...")
+        helper.initValidUsers()
         while True:
             client, (clientip,clientport) = self.tcpServer.accept()
             threading.Thread(target=self.clienthandler, args=(client,)).start()

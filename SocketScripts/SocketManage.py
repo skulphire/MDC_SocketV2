@@ -5,9 +5,6 @@ import socket
 
 class SocketManage(object):
 
-    def __init__(self):
-        helper.initValidUsers()
-
     def testdata(self, data, client):
         if data:
             if (client not in helper.CONNECTIONS or helper.AREUSERSLOGGEDIN[helper.CONNECTIONS[client]] is False):
