@@ -27,6 +27,7 @@ class ThreadedServer(object):
                 data = client.recv(1024)
                 if data:
                     data = helper.convertToString(data)
+                    print(data)
                     self.smanage.testdata(data,client)
             except Exception:
                 break
