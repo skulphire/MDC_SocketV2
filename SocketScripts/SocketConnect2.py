@@ -4,7 +4,7 @@ from SocketScripts import SocketManage
 from SocketScripts import SocketHelper as helper
 
 class ThreadedServer(object):
-    def __init__(self,serverHost = '0.0.0.0', serverPort = 9130):
+    def __init__(self,serverHost = '100.16.100.180', serverPort = 9130):
         self.ip = serverHost
         self.port = serverPort
         self.smanage = SocketManage.SocketManage()
@@ -15,6 +15,7 @@ class ThreadedServer(object):
         self.tcpServer.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.tcpServer.bind((self.ip, self.port))
         self.tcpServer.listen(1)
+        print("awating connections...")
         while True:
             client, (clientip,clientport) = self.tcpServer.accept()
             threading.Thread(target=self.clienthandler, args=(client,)).start()
