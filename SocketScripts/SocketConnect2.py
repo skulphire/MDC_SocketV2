@@ -4,7 +4,7 @@ from SocketScripts import SocketManage
 from SocketScripts import SocketHelper as helper
 
 class ThreadedServer(object):
-    def __init__(self,serverHost = '0.0.0.0', serverPort = 2004):
+    def __init__(self,serverHost = '0.0.0.0', serverPort = 9130):
         self.ip = serverHost
         self.port = serverPort
         self.smanage = SocketManage.SocketManage()

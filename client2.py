@@ -2,8 +2,8 @@
 import socket
 from SocketScripts import SocketHelper as helper
 
-host = "10.10.1.7"
-port = 2004
+host = "opsidiumdesigns.com"
+port = 9130
 BUFFER_SIZE = 2000
 MESSAGE = input("tcpClientB: Enter message/ Enter exit:")
 

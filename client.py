@@ -3,7 +3,7 @@ import socket
 from SocketScripts import SocketHelper as helper
 
 host = socket.gethostname()
-port = 2004
+port = 9130
 BUFFER_SIZE = 2000
 MESSAGE = input("tcpClientB: Enter message/ Enter exit:")
 
