@@ -31,6 +31,7 @@ def initValidUsers(org = "ADPS"):
     try:
         VALIDUSERS = os.listdir(dir)
         for user in VALIDUSERS:
+            print("User>"+user)
             AREUSERSLOGGEDIN[user] = False
     except Exception:
         print("No Files Found in: "+dir)
