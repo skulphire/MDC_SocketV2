@@ -10,6 +10,7 @@ class ThreadedServer(object):
         self.smanage = SocketManage.SocketManage()
 
     def startServer(self):
+        print("Starting server...")
         self.tcpServer = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.tcpServer.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.tcpServer.bind((self.ip, self.port))
@@ -29,3 +30,4 @@ class ThreadedServer(object):
             except Exception:
                 break
         print("Closing client")
+        print("[-] Server socket thread stopped for...")
