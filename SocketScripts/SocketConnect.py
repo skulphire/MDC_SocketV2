@@ -17,7 +17,6 @@ class ClientThread(Thread):
 
     def run(self):
         while True:
-            conn.settimeout(1)
             try:
                 data = conn.recv(1024)
                 print("__has data")
@@ -28,6 +27,7 @@ class ClientThread(Thread):
                     self.smanage.testdata(data,conn)
                 else:
                     print("__Else")
+                    conn.close()
             except Exception:
                 conn.close()
                 return False
