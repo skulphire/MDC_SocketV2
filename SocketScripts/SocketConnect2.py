@@ -13,7 +13,6 @@ class ThreadedServer(object):
         print("Starting server...")
         self.tcpServer = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.tcpServer.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        self.tcpServer.setblocking(0)
         self.tcpServer.bind((self.ip, self.port))
         print("Server Binded to> "+self.ip+", "+str(self.port))
         self.tcpServer.listen(1)
