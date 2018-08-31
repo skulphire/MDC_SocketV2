@@ -3,11 +3,11 @@ from SocketScripts import globals
 def clearDictsOfClient(client):
     print("Removing user")
     globals.AREUSERSLOGGEDIN[globals.CONNECTIONS[client]] = False
-    del globals.CLIENTIPS[client]
+    del globals.CLIENTIPS[globals.CONNECTIONS[client]]
     del globals.CONNECTIONS[client]
 
 def closingClient(client,disconnectMessage):
-    if(client in globals.CLIENTIPS):
+    if(client in globals.CONNECTIONS):
         try:
             print("Closing "+globals.CONNECTIONS[client]+"for: "+disconnectMessage)
             clearDictsOfClient(client)
