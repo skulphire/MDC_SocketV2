@@ -9,12 +9,7 @@ class SocketManage(object):
     def testdata(self, data, client, server):
         if data:
             if (client not in globals.CONNECTIONS or globals.AREUSERSLOGGEDIN[globals.CONNECTIONS[client]] is False):
-                isValidUser, user = self.checkIfLoggedIn(data)
-                print("isvalid="+isValidUser+" | User:"+user)
-                # if user is logged on elsewhere
-                if ("invalid" in user.tolower()):
-                    print("Client already logged in")
-                    helper.closingClient(client, "Already Logged in")
+                isValidUser, user = self.checkIfValidUser(data)
             else:
                 isValidUser = False
                 user = ""
@@ -61,7 +56,7 @@ class SocketManage(object):
         else:
             helper.closingClient(client, "No Data (Crash)")
 
-    def checkIfLoggedIn(self,data):
+    def checkIfValidUser(self, data):
         print("Checking user..")
         b = False
         #splitting = Badge:000000

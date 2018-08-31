@@ -34,5 +34,5 @@ class ThreadedServer(object):
             except Exception:
                 print("Breaking thread...")
                 break
-        helper.closingClient(client,"Disconnect")
+        #helper.closingClient(client,"Disconnect")
         print("[-] Server socket thread stopped for...")
