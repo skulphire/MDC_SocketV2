@@ -10,6 +10,7 @@ class SocketManage(object):
         if data:
             if (client not in globals.CONNECTIONS or globals.AREUSERSLOGGEDIN[globals.CONNECTIONS[client]] is False):
                 isValidUser, user = self.checkIfLoggedIn(data)
+                print("isvalid="+isValidUser+" | User:"+user)
                 # if user is logged on elsewhere
                 if ("invalid" in user.tolower()):
                     print("Client already logged in")
