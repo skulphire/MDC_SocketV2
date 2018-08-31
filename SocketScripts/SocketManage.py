@@ -43,10 +43,10 @@ class SocketManage(object):
                 elif "loggedinusers" in data.lower():
                     sending = "usersonline"
                     for user in globals.CONNECTIONS:
+                        print("we are here")
                         if(globals.AREUSERSLOGGEDIN[user]):
                             sending = sending+":"+user
                     client.send(helper.convertToBytes(sending))
-                    print("we are here")
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
