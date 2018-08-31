@@ -10,6 +10,10 @@ class SocketManage(object):
         if data:
             if (client not in globals.CONNECTIONS or globals.AREUSERSLOGGEDIN[globals.CONNECTIONS[client]] is False):
                 isValidUser, user = self.checkIfLoggedIn(data)
+                # if user is logged on elsewhere
+                if ("invalid" in user.tolower()):
+                    print("Client already logged in")
+                    helper.closingClient(client, "Already Logged in")
             else:
                 isValidUser = False
                 user = ""
@@ -50,19 +54,9 @@ class SocketManage(object):
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
-            #if user is logged on elsewhere
             else:
-                print(globals.CONNECTIONS[client])
-                if (globals.AREUSERSLOGGEDIN[globals.CONNECTIONS[client]] is True):
-                    print("Client already logged in")
-                    helper.closingClient(client, "Already Logged in")
-                # try:
-                #     if(globals.AREUSERSLOGGEDIN[globals.CONNECTIONS[client]] is True):
-                #         print("Client already logged in")
-                #         helper.closingClient(client, "Already Logged in")
-                # except Exception:
-                #     print("Invalid Input")
-                #     helper.closingClient(client, "Invalid Input")
+                print("Invalid Input")
+                helper.closingClient(client, "Invalid Input")
         else:
             helper.closingClient(client, "No Data (Crash)")
 
