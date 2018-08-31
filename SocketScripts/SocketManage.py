@@ -21,6 +21,7 @@ class SocketManage(object):
                 client.send(helper.convertToBytes("Valid"))
             #if already logged in
             elif client in globals.CONNECTIONS and globals.AREUSERSLOGGEDIN[globals.CONNECTIONS[client]] is True:
+                print("we are here")
                 #sendto:badge:message
                 if "sendto" in data.lower():
                     sending = data.split(":")
