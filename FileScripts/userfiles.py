@@ -6,14 +6,10 @@ def checkIfSuper(user,org="ADPS"):
     print("File Dir: " + filedir)
     try:
         filedirlist = os.listdir(filedir)
-
         if (user in filedirlist):
-            os.rename(user,user+".txt")
-            user = user+".txt"
             with open(user) as f:
                 lines = f.readlines()
             if ("Super" in lines[1]):
-                os.rename(user+".txt",user)
                 return True
         else:
             print("User does not exist")
