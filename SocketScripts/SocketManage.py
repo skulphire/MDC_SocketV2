@@ -16,7 +16,7 @@ class SocketManage(object):
             if(isValidUser and not user == "Login"):
                 globals.CONNECTIONS[client] = user
                 globals.CLIENTIPS[user] = client
-                print ("Logged in")
+                print (user+" Has Logged in")
                 print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                 client.send(helper.convertToBytes("Valid"))
             #if already logged in
