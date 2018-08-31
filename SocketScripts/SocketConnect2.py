@@ -32,6 +32,7 @@ class ThreadedServer(object):
                     print(data)
                     self.smanage.testdata(data,client)
             except Exception:
+                print("Breaking thread...")
                 break
         helper.closingClient(client,"Disconnect")
         print("[-] Server socket thread stopped for...")
