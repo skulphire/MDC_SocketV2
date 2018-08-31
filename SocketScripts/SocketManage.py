@@ -1,5 +1,6 @@
 from SocketScripts import SocketHelper as helper
 from SocketScripts import globals
+from FileScripts import userfiles
 import os
 import socket
 
@@ -50,6 +51,11 @@ class SocketManage(object):
                         if(globals.AREUSERSLOGGEDIN[user]):
                             sending = sending+":"+user
                     client.send(helper.convertToBytes(sending))
+                elif "issuper" in data.lower():
+                    if(userfiles.checkIfSuper(globals.CONNECTIONS[client])):
+                        client.send(helper.convertToBytes("True"))
+                    else:
+                        client.send(helper.convertToBytes("False"))
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
