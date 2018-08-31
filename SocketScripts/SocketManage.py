@@ -24,14 +24,17 @@ class SocketManage(object):
                 #sendto:badge:message
                 if "sendto" in data.lower():
                     sending = data.split(":")
-                    if sending[1] in globals.CLIENTIPS:
-                        receiver = globals.CLIENTIPS[sending[1]]
-                        receiver.send(helper.convertToBytes(sending[2]))
-                        client.send(helper.convertToBytes("Valid"))
-                        print("Valid Data")
+                    if(globals.AREUSERSLOGGEDIN[sending[1]]):
+                        if sending[1] in globals.CLIENTIPS:
+                            receiver = globals.CLIENTIPS[sending[1]]
+                            receiver.send(helper.convertToBytes(sending[2]))
+                            client.send(helper.convertToBytes("Valid"))
+                            print("Valid Data")
+                        else:
+                            client.send(helper.convertToBytes("Invalid"))
+                            print("Invalid Data")
                     else:
-                        client.send(helper.convertToBytes("Invalid"))
-                        print("Invalid Data")
+                        client.send(helper.convertToBytes("NoUser"))
                 #get user list
                 elif "userlist" in data.lower():
                     sending = "userlist"
