@@ -6,7 +6,7 @@ import socket
 
 class SocketManage(object):
 
-    def testdata(self, data, client):
+    def testdata(self, data, client, server):
         if data:
             if (client not in globals.CONNECTIONS or globals.AREUSERSLOGGEDIN[globals.CONNECTIONS[client]] is False):
                 isValidUser, user = self.checkIfLoggedIn(data)

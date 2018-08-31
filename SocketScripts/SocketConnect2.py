@@ -30,7 +30,7 @@ class ThreadedServer(object):
                 if data:
                     data = helper.convertToString(data)
                     print(data)
-                    self.smanage.testdata(data,client)
+                    self.smanage.testdata(data,client, self.tcpServer)
             except Exception:
                 print("Breaking thread...")
                 break
