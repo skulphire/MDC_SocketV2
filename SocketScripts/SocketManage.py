@@ -21,7 +21,6 @@ class SocketManage(object):
                 client.send(helper.convertToBytes("Valid"))
             #if already logged in
             elif client in globals.CONNECTIONS and globals.AREUSERSLOGGEDIN[globals.CONNECTIONS[client]] is True:
-                print("we are here")
                 #sendto:badge:message
                 if "sendto" in data.lower():
                     sending = data.split(":")
@@ -42,6 +41,7 @@ class SocketManage(object):
                     client.send(helper.convertToBytes(sending))
                 #get users online
                 elif "loggedinusers" in data.lower():
+                    print("we are here")
                     sending = "usersonline"
                     for user in globals.CONNECTIONS:
                         if(globals.AREUSERSLOGGEDIN[user]):
