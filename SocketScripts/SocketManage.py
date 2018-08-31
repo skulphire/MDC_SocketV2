@@ -52,6 +52,7 @@ class SocketManage(object):
                     client.send(helper.convertToBytes("rec"))
             #if user is logged on elsewhere
             else:
+                print(globals.CONNECTIONS[client])
                 if (globals.AREUSERSLOGGEDIN[globals.CONNECTIONS[client]] is True):
                     print("Client already logged in")
                     helper.closingClient(client, "Already Logged in")
