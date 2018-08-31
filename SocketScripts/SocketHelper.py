@@ -9,7 +9,7 @@ def clearDictsOfClient(client):
 def closingClient(client,disconnectMessage):
     if(client in globals.CONNECTIONS):
         try:
-            print("Closing "+globals.CONNECTIONS[client]+"for: "+disconnectMessage)
+            print("Closing "+globals.CONNECTIONS[client]+" for: "+disconnectMessage)
             clearDictsOfClient(client)
         except Exception:
             print("Closing Client without remove for: "+disconnectMessage)
