@@ -61,6 +61,7 @@ class SocketManage(object):
             helper.closingClient(client, "No Data (Crash)")
 
     def checkIfLoggedIn(self,data):
+        print("Checking user..")
         b = False
         #splitting = Badge:000000
         try:
