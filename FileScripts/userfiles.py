@@ -3,8 +3,8 @@ import os
 def checkIfSuper(user,org="ADPS"):
     workingdir = os.getcwd()
     filedir = workingdir + "/MDC-Files/" + org+"-Users/"
+    print("File Dir: " + filedir)
     filedirlist = os.listdir(filedir)
-    #print("File Dir: "+filedir)
     if(user in filedirlist):
         with open(user) as f:
             lines = f.readlines()
