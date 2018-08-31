@@ -1,5 +1,10 @@
 #GLOBALS
+
 VALIDUSERS = []
+
+#badge number
 AREUSERSLOGGEDIN = {}
+
 CONNECTIONS = {}
+
 CLIENTIPS = {}

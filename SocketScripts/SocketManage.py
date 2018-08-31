@@ -42,7 +42,7 @@ class SocketManage(object):
                 #get users online
                 elif "loggedinusers" in data.lower():
                     sending = "usersonline"
-                    for user in globals.CONNECTIONS:
+                    for user in globals.VALIDUSERS:
                         print(user)
                         if(globals.AREUSERSLOGGEDIN[user]):
                             sending = sending+":"+user
