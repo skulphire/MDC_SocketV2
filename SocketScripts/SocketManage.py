@@ -59,6 +59,7 @@ class SocketManage(object):
                     print("Invalid Input")
                     helper.closingClient(client, "Invalid Input")
         else:
+            print("No data")
             helper.closingClient(client, "Disconnect")
 
     def checkIfLoggedIn(self,data):
