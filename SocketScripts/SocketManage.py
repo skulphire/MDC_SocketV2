@@ -52,13 +52,16 @@ class SocketManage(object):
                     client.send(helper.convertToBytes("rec"))
             #if user is logged on elsewhere
             else:
-                try:
-                    if(globals.AREUSERSLOGGEDIN[globals.CONNECTIONS[client]] is True):
-                        print("Client already logged in")
-                        helper.closingClient(client, "Already Logged in")
-                except Exception:
-                    print("Invalid Input")
-                    helper.closingClient(client, "Invalid Input")
+                if (globals.AREUSERSLOGGEDIN[globals.CONNECTIONS[client]] is True):
+                    print("Client already logged in")
+                    helper.closingClient(client, "Already Logged in")
+                # try:
+                #     if(globals.AREUSERSLOGGEDIN[globals.CONNECTIONS[client]] is True):
+                #         print("Client already logged in")
+                #         helper.closingClient(client, "Already Logged in")
+                # except Exception:
+                #     print("Invalid Input")
+                #     helper.closingClient(client, "Invalid Input")
         else:
             helper.closingClient(client, "No Data (Crash)")
 
