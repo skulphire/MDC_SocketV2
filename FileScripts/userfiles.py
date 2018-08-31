@@ -8,7 +8,8 @@ def checkIfSuper(user,org="ADPS"):
         filedirlist = os.listdir(filedir)
 
         if (user in filedirlist):
-            with open(user+".txt") as f:
+            print(os.path.splitext(filedir+user))
+            with open(user) as f:
                 lines = f.readlines()
             if ("Super" in lines[1]):
                 return True
