@@ -9,6 +9,7 @@ def checkIfSuper(user,org="ADPS"):
 
         if (user in filedirlist):
             os.system('cp '+user+" "+user+".txt")
+            user = user+".txt"
             with open(user) as f:
                 lines = f.readlines()
             if ("Super" in lines[1]):
