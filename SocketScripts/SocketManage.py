@@ -41,12 +41,12 @@ class SocketManage(object):
                     client.send(helper.convertToBytes(sending))
                 #get users online
                 elif "loggedinusers" in data.lower():
-                    print("we are here")
                     sending = "usersonline"
                     for user in globals.CONNECTIONS:
                         if(globals.AREUSERSLOGGEDIN[user]):
                             sending = sending+":"+user
                     client.send(helper.convertToBytes(sending))
+                    print("we are here")
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
@@ -60,8 +60,7 @@ class SocketManage(object):
                     print("Invalid Input")
                     helper.closingClient(client, "Invalid Input")
         else:
-            print("No data")
-            helper.closingClient(client, "Disconnect")
+            helper.closingClient(client, "No Data (Crash)")
 
     def checkIfLoggedIn(self,data):
         b = False
