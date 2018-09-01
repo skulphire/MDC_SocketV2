@@ -9,11 +9,12 @@ MESSAGE = input("tcpClientB: Enter message/ Enter exit:")
 
 tcpClientB = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 tcpClientB.connect((host, port))
-
-while MESSAGE != 'exit':
-    tcpClientB.send(helper.convertToBytes(MESSAGE))
-    data = tcpClientB.recv(BUFFER_SIZE)
-    print(" Client received data:", data)
-    MESSAGE = input("tcpClientB: Enter message to continue/ Enter exit:")
-
-tcpClientB.close()
+try:
+    while MESSAGE != 'exit':
+        tcpClientB.send(helper.convertToBytes(MESSAGE))
+        data = tcpClientB.recv(BUFFER_SIZE)
+        print(" Client received data:", data)
+        MESSAGE = input("tcpClientB: Enter message to continue/ Enter exit:")
+        tcpClientB.close()
+except:
+    tcpClientB.close()
