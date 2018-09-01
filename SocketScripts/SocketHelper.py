@@ -28,7 +28,8 @@ def initValidUsers(org = "ADPS"):
             print("User>" + splits[0])
             globals.AREUSERSLOGGEDIN[splits[0]] = False
             globals.VALIDUSERS = splits[0]
-    except Exception:
+    except Exception as e:
+        print("Exception: "+e)
         print("No Files Found in: "+dir)
 
 def convertToString(bite):
