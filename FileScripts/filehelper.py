@@ -12,8 +12,8 @@ def checkdirectory(directorytocheck, org="ADPS"):
             # entry = entry.replace(']', "")
             # entry = entry.replace("'", "")
             # entry = entry.replace('[',"")
-            entry.split(".")
-            newcontents = newcontents +entry[0] +","
+            splits = entry.split(".")
+            newcontents = newcontents +splits[0] +","
         return newcontents
     except Exception as e:
         print(e)
