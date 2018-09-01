@@ -84,8 +84,8 @@ class SocketManage(object):
             split = data.split(":")
             #is this a login attempt
             if(split[0].lower() == "badge"):
-                print("here")
                 for user in globals.VALIDUSERS:
+                    print(user)
                     #is it a valid user
                     if (split[1] == user and globals.AREUSERSLOGGEDIN[user] == False):
                         #if user is valid set as logged in
