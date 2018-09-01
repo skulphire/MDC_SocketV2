@@ -66,6 +66,9 @@ class SocketManage(object):
                     client.send(helper.convertToBytes(userfiles.getUserEmail(globals.CONNECTIONS[client])))
                 elif "getuserrolename" in data.lower():
                     client.send(helper.convertToBytes(userfiles.getUserRoleName(globals.CONNECTIONS[client])))
+                #convo:text
+                elif "convo" in data.lower():
+                    client.send(helper.convertToBytes())
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
