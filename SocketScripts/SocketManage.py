@@ -2,6 +2,7 @@ from SocketScripts import SocketHelper as helper
 from SocketScripts import globals
 from FileScripts import userfiles
 from FileScripts import senariosconversations
+from FileScripts import  filehelper
 class SocketManage(object):
 
     def testdata(self, data, client, server):
@@ -70,6 +71,10 @@ class SocketManage(object):
                 elif "convo" in data.lower():
                     splits = data.split(":")
                     client.send(helper.convertToBytes(senariosconversations.readScript(splits[1])))
+                elif "checkcontents" in data.lower():
+                    splits = data.split(":")
+                    directoryToCheck = splits[1]
+                    client.send(helper.convertToBytes(filehelper.checkdirectory(directoryToCheck)))
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
