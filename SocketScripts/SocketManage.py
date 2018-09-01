@@ -1,7 +1,7 @@
 from SocketScripts import SocketHelper as helper
 from SocketScripts import globals
 from FileScripts import userfiles
-
+from FileScripts import senariosconversations
 class SocketManage(object):
 
     def testdata(self, data, client, server):
@@ -68,7 +68,8 @@ class SocketManage(object):
                     client.send(helper.convertToBytes(userfiles.getUserRoleName(globals.CONNECTIONS[client])))
                 #convo:text
                 elif "convo" in data.lower():
-                    client.send(helper.convertToBytes())
+                    splits = data.split(":")
+                    client.send(helper.convertToBytes(senariosconversations.readScript(splits[1])))
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
