@@ -24,7 +24,7 @@ def initValidUsers(org = "ADPS"):
     try:
         change = os.listdir(dir)
         for user in change:
-            splits = os.path.splitext(dir+user)
+            splits = user.split(".")
             print("User>" + splits[0])
             globals.VALIDUSERS[splits[0]] = False
 
