@@ -53,7 +53,7 @@ def getUserEmail(user,org="ADPS"):
             with open(real+user) as f:
                 lines = f.readlines()
                 if("none" or "@" in lines[1]):
-                    return lines[1]
+                    return lines[1].strip('\n')
                 else:
                     return "none"
         else:
