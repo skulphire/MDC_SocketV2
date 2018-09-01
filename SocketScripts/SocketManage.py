@@ -96,5 +96,6 @@ class SocketManage(object):
             else:
                 return False, "invalid"
             return b, split[1]
-        except:
+        except Exception as e:
+            print(e)
             return False, "invalid"
