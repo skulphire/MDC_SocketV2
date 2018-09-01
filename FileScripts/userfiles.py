@@ -4,9 +4,10 @@ def checkIfSuper(user,org="ADPS"):
     user = user+".txt"
     workingdir = os.getcwd()
     filedir = workingdir + "/MDC-Files/" + org+"-Users/"
-    print("File Dir: " + filedir)
+    #print("File Dir: " + filedir)
     try:
         filedirlist = os.listdir(filedir)
+        print(filedirlist)
         if (user in filedirlist):
             with open(user) as f:
                 lines = f.readlines()
@@ -23,7 +24,7 @@ def checkGamerTag(user, gamertag,org="ADPS"):
     user = user + ".txt"
     workingdir = os.getcwd()
     filedir = workingdir + "/MDC-Files/" + org + "-Users/"
-    print("File Dir: " + filedir)
+    #print("File Dir: " + filedir)
     try:
         filedirlist = os.listdir(filedir)
         if (user in filedirlist):
@@ -42,7 +43,7 @@ def getUserEmail(user,org="ADPS"):
     user = user + ".txt"
     workingdir = os.getcwd()
     filedir = workingdir + "/MDC-Files/" + org + "-Users/"
-    print("File Dir: " + filedir)
+    #print("File Dir: " + filedir)
     try:
         filedirlist = os.listdir(filedir)
         if (user in filedirlist):
