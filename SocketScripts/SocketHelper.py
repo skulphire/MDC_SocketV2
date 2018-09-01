@@ -26,11 +26,9 @@ def initValidUsers(org = "ADPS"):
         for user in change:
             splits = user.split(".")
             print("User>" + splits[0])
-            globals.VALIDUSERS[splits[0]] = False
+            globals.AREUSERSLOGGEDIN[splits[0]] = False
+            globals.VALIDUSERS = splits[0]
 
-        #for user in globals.VALIDUSERS:
-        #
-        #    globals.AREUSERSLOGGEDIN[user] = False
     except Exception:
         print("No Files Found in: "+dir)
 
