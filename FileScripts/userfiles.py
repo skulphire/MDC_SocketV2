@@ -62,3 +62,22 @@ def getUserEmail(user,org="ADPS"):
     except Exception as e:
         print(e)
         return "none"
+
+def getUserRoleName(user,org="ADPS"):
+    user = user + ".txt"
+    workingdir = os.getcwd()
+    filedir = workingdir + "/MDC-Files/" + org + "-Users/"
+    real = os.path.realpath(filedir) + "/"
+    # print("File Dir: " + filedir)
+    try:
+        filedirlist = os.listdir(filedir)
+        if (user in filedirlist):
+            with open(real + user) as f:
+                lines = f.readlines()
+                return lines[0].strip('\n')
+        else:
+            print("User does not exist")
+            return "none"
+    except Exception as e:
+        print(e)
+        return "none"

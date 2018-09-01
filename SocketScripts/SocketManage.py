@@ -1,9 +1,6 @@
 from SocketScripts import SocketHelper as helper
 from SocketScripts import globals
 from FileScripts import userfiles
-import os
-import socket
-
 
 class SocketManage(object):
 
@@ -67,6 +64,8 @@ class SocketManage(object):
                 #getuseremail
                 elif "getuseremail" in data.lower():
                     client.send(helper.convertToBytes(userfiles.getUserEmail(globals.CONNECTIONS[client])))
+                elif "getuserrolename" in data.lower():
+                    client.send(helper.convertToBytes(userfiles.getUserRoleName(globals.CONNECTIONS[client])))
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
