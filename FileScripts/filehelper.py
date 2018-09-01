@@ -8,11 +8,11 @@ def checkdirectory(directorytocheck, org="ADPS"):
         contents = os.listdir(path)
         newcontents = []
         for entry in contents:
-            print(entry)
-            entry = entry.replace('[',"")
-            entry = entry.replace(']', "")
-            entry = entry.replace("'", "")
-            newcontents.append(entry)
+            # entry = entry.replace(']', "")
+            # entry = entry.replace("'", "")
+            # entry = entry.replace('[',"")
+            entry.split(".")
+            newcontents.append(entry[0])
         return newcontents
     except Exception as e:
         print(e)
