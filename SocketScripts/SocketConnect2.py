@@ -36,4 +36,4 @@ class ThreadedServer(object):
                 print("Breaking thread...")
                 break
         user = helper.closingClient(client,"Disconnect")
-        print("[-] Server socket thread stopped for user> "+user)
+        print("[-] Server socket thread stopped for user: "+user)
