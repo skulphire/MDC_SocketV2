@@ -8,13 +8,10 @@ def readScript(script):
         path = os.path.realpath(workingdir+script+".txt")
         with open(path) as f:
             count = 0
-            for line in f:
-                if(line.strip()):
-                    count=count+1
-            print(count)
-            rnd = random.randint(0,count)
             lines = f.readlines()
-        return lines[rnd]
+            count = len(lines)
+            rnd = random.randint(0,count)
+        return lines[rnd].strip('\n')
     except Exception as e:
         print(e)
         return "Exception"
