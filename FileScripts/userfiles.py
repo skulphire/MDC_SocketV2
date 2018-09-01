@@ -25,11 +25,12 @@ def checkGamerTag(user, gamertag,org="ADPS"):
     user = user + ".txt"
     workingdir = os.getcwd()
     filedir = workingdir + "/MDC-Files/" + org + "-Users/"
+    real = os.path.realpath(filedir) + "/"
     #print("File Dir: " + filedir)
     try:
         filedirlist = os.listdir(filedir)
         if (user in filedirlist):
-            with open(user) as f:
+            with open(real+user) as f:
                 lines = f.readlines()
             if (gamertag in lines[2]):
                 return True
@@ -44,11 +45,12 @@ def getUserEmail(user,org="ADPS"):
     user = user + ".txt"
     workingdir = os.getcwd()
     filedir = workingdir + "/MDC-Files/" + org + "-Users/"
+    real = os.path.realpath(filedir) + "/"
     #print("File Dir: " + filedir)
     try:
         filedirlist = os.listdir(filedir)
         if (user in filedirlist):
-            with open(user) as f:
+            with open(real+user) as f:
                 lines = f.readlines()
                 if("none" or "@" in lines[1]):
                     return lines[1]
