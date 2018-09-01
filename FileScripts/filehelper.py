@@ -8,10 +8,7 @@ def checkdirectory(directorytocheck, org="ADPS"):
         contents = os.listdir(path)
         newcontents = ""
         for entry in contents:
-            print("Dir contents: "+entry)
-            # entry = entry.replace(']', "")
-            # entry = entry.replace("'", "")
-            # entry = entry.replace('[',"")
+            #print("Dir contents: "+entry)
             splits = entry.split(".")
             newcontents = newcontents +splits[0] +","
         return newcontents
