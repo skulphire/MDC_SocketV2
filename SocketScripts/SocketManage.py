@@ -72,6 +72,7 @@ class SocketManage(object):
                     splits = data.split(":")
                     client.send(helper.convertToBytes(senariosconversations.readScript(splits[1])))
                 elif "checkcontents" in data.lower():
+                    print("here")
                     splits = data.split(":")
                     directoryToCheck = splits[1]
                     client.send(helper.convertToBytes(filehelper.checkdirectory(directoryToCheck)))
