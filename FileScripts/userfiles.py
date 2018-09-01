@@ -4,7 +4,7 @@ def checkIfSuper(user,org="ADPS"):
     user = user+".txt"
     workingdir = os.getcwd()
     filedir = workingdir + "/MDC-Files/" + org+"-Users/"
-    real = os.path.realpath(filedir)
+    real = os.path.realpath(filedir)+"/"
     #print("File Dir: " + filedir)
     try:
         filedirlist = os.listdir(filedir)
