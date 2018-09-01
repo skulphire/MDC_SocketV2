@@ -11,6 +11,7 @@ def readScript(script):
             for line in f:
                 if(line.strip()):
                     count=count+1
+            print(count)
             rnd = random.randint(0,count)
             lines = f.readlines()
         return lines[rnd]
