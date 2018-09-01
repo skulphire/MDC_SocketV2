@@ -51,11 +51,22 @@ class SocketManage(object):
                         if(globals.AREUSERSLOGGEDIN[user]):
                             sending = sending+":"+user
                     client.send(helper.convertToBytes(sending))
+                #issuper
                 elif "issuper" in data.lower():
                     if(userfiles.checkIfSuper(globals.CONNECTIONS[client])):
                         client.send(helper.convertToBytes("True"))
                     else:
                         client.send(helper.convertToBytes("False"))
+                #checkgt:gt
+                elif "checkgt" in data.lower():
+                    splits = data.split(":")
+                    if(userfiles.checkGamerTag(globals.CONNECTIONS[client],splits[1])):
+                        client.send(helper.convertToBytes("True"))
+                    else:
+                        client.send(helper.convertToBytes("False"))
+                #getuseremail
+                elif "getuseremail" in data.lower():
+                    client.send(helper.convertToBytes(userfiles.getUserEmail(globals.CONNECTIONS[client])))
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
