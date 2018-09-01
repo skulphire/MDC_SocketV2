@@ -8,14 +8,17 @@ def clearDictsOfClient(client):
 
 def closingClient(client,disconnectMessage):
     if(client in globals.CONNECTIONS):
+        user = globals.CONNECTIONS[client]
         try:
             print("Closing "+globals.CONNECTIONS[client]+" for: "+disconnectMessage)
             clearDictsOfClient(client)
         except Exception:
             print("Closing Client without remove for: "+disconnectMessage)
+        return user
     else:
         print("Closing Client for: "+disconnectMessage + ": Client was not logged in")
     client.close()
+    return "unknown"
 
 def initValidUsers(org = "ADPS"):
     userDir = org+"-Users/"
