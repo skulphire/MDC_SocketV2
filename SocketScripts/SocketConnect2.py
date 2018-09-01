@@ -24,10 +24,10 @@ class ThreadedServer(object):
             print("[+] New server socket thread started for " + clientip + ":" + str(clientport))
 
     def clienthandler(self,client):
+        client.settimeout(1)
         while True:
             try:
-                if(not client.close()):
-                    data = client.recv(1024)
+                data = client.recv(1024)
                 if data:
                     data = helper.convertToString(data)
                     print(data)
