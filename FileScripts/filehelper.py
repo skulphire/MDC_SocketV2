@@ -6,14 +6,14 @@ def checkdirectory(directorytocheck, org="ADPS"):
     try:
         path = os.path.realpath(workingdir+org+"-"+directorytocheck)+"/"
         contents = os.listdir(path)
-        newcontents = []
+        newcontents = ""
         for entry in contents:
             print("Dir contents: "+entry)
             # entry = entry.replace(']', "")
             # entry = entry.replace("'", "")
             # entry = entry.replace('[',"")
             entry.split(".")
-            newcontents.append(entry[0])
+            newcontents = newcontents +entry[0] +","
         return newcontents
     except Exception as e:
         print(e)
