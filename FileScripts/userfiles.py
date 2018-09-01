@@ -3,13 +3,14 @@ import os
 def checkIfSuper(user,org="ADPS"):
     user = user+".txt"
     workingdir = os.getcwd()
-    filedir =  "MDC-Files/" + org+"-Users/"
+    filedir = workingdir + "/MDC-Files/" + org+"-Users/"
+    real = os.path.realpath(filedir)
     #print("File Dir: " + filedir)
     try:
         filedirlist = os.listdir(filedir)
         print(filedirlist)
         if (user in filedirlist):
-            with open(user) as f:
+            with open(real+user) as f:
                 lines = f.readlines()
             if ("Super" in lines[3]):
                 return True
