@@ -9,7 +9,8 @@ def readScript(script):
         with open(path) as f:
             count = 0
             for line in f:
-                count=count+1
+                if(line.strip()):
+                    count=count+1
             rnd = random.randint(0,count)
             lines = f.readlines()
         return lines[rnd]
