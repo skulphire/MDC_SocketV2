@@ -15,6 +15,6 @@ try:
         data = tcpClientB.recv(BUFFER_SIZE)
         print(" Client received data:", data)
         MESSAGE = input("tcpClientB: Enter message to continue/ Enter exit:")
-        tcpClientB.close()
+    tcpClientB.close()
 except:
     tcpClientB.close()
