@@ -78,6 +78,7 @@ class SocketManage(object):
 
     def checkIfValidUser(self, data):
         print("Checking user..")
+        print(globals.VALIDUSERS)
         b = False
         #splitting = Badge:000000
         try:
