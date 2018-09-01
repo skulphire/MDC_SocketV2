@@ -26,7 +26,8 @@ class ThreadedServer(object):
     def clienthandler(self,client):
         while True:
             try:
-                data = client.recv(1024)
+                if(not client.close()):
+                    data = client.recv(1024)
                 if data:
                     data = helper.convertToString(data)
                     print(data)
