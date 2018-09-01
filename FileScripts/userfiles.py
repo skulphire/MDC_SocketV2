@@ -1,6 +1,7 @@
 import os
 
 def checkIfSuper(user,org="ADPS"):
+    user = user+".txt"
     workingdir = os.getcwd()
     filedir = workingdir + "/MDC-Files/" + org+"-Users/"
     print("File Dir: " + filedir)
@@ -19,6 +20,7 @@ def checkIfSuper(user,org="ADPS"):
         return False
 
 def checkGamerTag(user, gamertag,org="ADPS"):
+    user = user + ".txt"
     workingdir = os.getcwd()
     filedir = workingdir + "/MDC-Files/" + org + "-Users/"
     print("File Dir: " + filedir)
@@ -37,6 +39,7 @@ def checkGamerTag(user, gamertag,org="ADPS"):
         return False
 
 def getUserEmail(user,org="ADPS"):
+    user = user + ".txt"
     workingdir = os.getcwd()
     filedir = workingdir + "/MDC-Files/" + org + "-Users/"
     print("File Dir: " + filedir)
