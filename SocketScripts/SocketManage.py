@@ -52,8 +52,10 @@ class SocketManage(object):
                 #issuper
                 elif "issuper" in data.lower():
                     if(userfiles.checkIfSuper(globals.CONNECTIONS[client])):
+                        print("True")
                         client.send(helper.convertToBytes("True"))
                     else:
+                        print("False")
                         client.send(helper.convertToBytes("False"))
                 #checkgt:gt
                 elif "checkgt" in data.lower():
