@@ -62,19 +62,39 @@ class SocketManage(object):
                         client.send(helper.convertToBytes("True"))
                     else:
                         client.send(helper.convertToBytes("False"))
-                #getuseremail
+                #getuseremail:user(optional)
                 elif "getuseremail" in data.lower():
-                    client.send(helper.convertToBytes(userfiles.getUserEmail(globals.CONNECTIONS[client])))
+                    splits = data.split(":")
+                    if(splits[1] is not "none"):
+                        client.send(helper.convertToBytes(userfiles.getUserEmail(splits[1])))
+                    else:
+                        client.send(helper.convertToBytes(userfiles.getUserEmail(globals.CONNECTIONS[client])))
                 elif "getuserrolename" in data.lower():
                     client.send(helper.convertToBytes(userfiles.getUserRoleName(globals.CONNECTIONS[client])))
                 #convo:text
                 elif "convo" in data.lower():
                     splits = data.split(":")
                     client.send(helper.convertToBytes(senariosconversations.readScript(splits[1])))
-                elif "checkcontents" in data.lower():
+                elif "checkcadpsontents" in data.lower():
                     splits = data.split(":")
                     directoryToCheck = splits[1]
-                    client.send(helper.convertToBytes(filehelper.checkdirectory(directoryToCheck)))
+                    client.send(helper.convertToBytes(filehelper.checkADPSdirectory(directoryToCheck)))
+                elif "checkreportscontents" in data.lower():
+                    splits = data.split(":")
+                    folder = splits[1]
+                    client.send(helper.convertToBytes(filehelper.checkReportsdirectory(folder)))
+                elif "getreport" in data.lower():
+                    splits = data.split(":")
+                    client.send(helper.convertToBytes(filehelper.getReport(splits[1],splits[2])))
+                elif "getsuspect" in data.lower():
+                    splits = data.split(":")
+                    client.send(helper.convertToBytes(filehelper.getSuspect(splits[1])))
+                elif "createsuspect" in data.lower():
+                    splits = data.split(":")
+                    if(filehelper.newsuspect(splits[1],splits[2])):
+                        client.send(helper.convertToBytes("Valid"))
+                    else:
+                        client.send(helper.convertToBytes("Invalid"))
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))

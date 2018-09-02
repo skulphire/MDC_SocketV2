@@ -8,7 +8,7 @@ def checkIfSuper(user,org="ADPS"):
     #print("File Dir: " + filedir)
     try:
         filedirlist = os.listdir(filedir)
-        print(filedirlist)
+        #print(filedirlist)
         if (user in filedirlist):
             with open(real+user) as f:
                 lines = f.readlines()
