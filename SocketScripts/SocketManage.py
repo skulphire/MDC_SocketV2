@@ -65,7 +65,7 @@ class SocketManage(object):
                 #getuseremail:user(optional)
                 elif "getuseremail" in data.lower():
                     splits = data.split(":")
-                    if(splits[1] is not "none"):
+                    if(splits[1] is not ""):
                         client.send(helper.convertToBytes(userfiles.getUserEmail(splits[1])))
                     else:
                         client.send(helper.convertToBytes(userfiles.getUserEmail(globals.CONNECTIONS[client])))
