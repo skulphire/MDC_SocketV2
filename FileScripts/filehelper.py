@@ -53,6 +53,6 @@ def getSuspect(file, org="ADPS"):
         return "none"
 def newsuspect(filename,data,org="ADPS"):
     path = os.path.realpath(workingdir + org + "-SuspectDatabase") + "/"
-    try:
-        with open(path+filename) as f:
-            #f.writelines()
+    # try:
+    #     with open(path+filename) as f:
+    #         f.writelines()
