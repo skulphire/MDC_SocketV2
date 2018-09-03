@@ -106,11 +106,15 @@ class SocketManage(object):
                         data = helper.convertToString(client.recv(1024))
                         senariodata[count] = data
                         count = count+1
-                    file = os.path.realpath(os.getcwd() + "/TempObjects/") + "/test.json"
-                    for line in senariodata:
-                        with open(file) as f:
-                            f.writelines(line)
-                    client.send(helper.convertToBytes("ack"))
+                    try:
+                        file = os.path.realpath(os.getcwd() + "/TempObjects/") + "/test.json"
+                        for line in senariodata:
+                            with open(file) as f:
+                                f.writelines(line)
+                        client.send(helper.convertToBytes("ack"))
+                    except Exception as e:
+                        print(e)
+                        client.send(helper.convertToBytes("invalid"))
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
