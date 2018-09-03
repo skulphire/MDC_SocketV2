@@ -122,6 +122,12 @@ class SocketManage(object):
                     except Exception as e:
                         print(e)
                         client.send(helper.convertToBytes("invalid"))
+                elif "sendback" in data.lower():
+                    file = os.path.realpath(os.getcwd() + "/TempObjects/") + "/test.json"
+                    with open(file, 'r') as f:
+                        lines = f.readlines()
+                    for line in lines:
+                        client.send(helper.convertToBytes(line))
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
