@@ -104,7 +104,8 @@ class SocketManage(object):
                     try:
                         while("#end-senario" not in data.lower()):
                             data = helper.convertToString(client.recv(2048))
-                            senariodata.append(data)
+                            if("#end-senario" not in data.lower()):
+                                senariodata.append(data)
                     except Exception as e:
                         print(e)
                         #exit(0)
