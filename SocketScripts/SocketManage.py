@@ -99,8 +99,11 @@ class SocketManage(object):
                         client.send(helper.convertToBytes("Invalid"))
                 elif "#senario" in data.lower():
                     client.send(helper.convertToBytes("ack"))
+                    senariodata = ""
                     while("#end-senario" not in data.lower()):
-
+                        data = helper.convertToString(client.recv(1024))
+                        senariodata = senariodata + data
+                    print(senariodata)
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
