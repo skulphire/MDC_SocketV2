@@ -65,7 +65,7 @@ class SocketManage(object):
                         client.send(helper.convertToBytes("True"))
                     else:
                         client.send(helper.convertToBytes("False"))
-                #getuseremail:user(optional)
+                #getuseremail:user(or 'none')
                 elif "getuseremail" in data.lower():
                     splits = data.split(":")
                     if(splits[1] is not ""):
@@ -109,6 +109,7 @@ class SocketManage(object):
                             count = count+1
                     except Exception as e:
                         print(e)
+                        exit(0)
                     try:
                         file = os.path.realpath(os.getcwd() + "/TempObjects/") + "/test.json"
                         for line in senariodata:
