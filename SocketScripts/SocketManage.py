@@ -1,3 +1,4 @@
+import os
 from SocketScripts import SocketHelper as helper
 from SocketScripts import globals
 from FileScripts import userfiles
@@ -99,11 +100,17 @@ class SocketManage(object):
                         client.send(helper.convertToBytes("Invalid"))
                 elif "#senario" in data.lower():
                     client.send(helper.convertToBytes("ack"))
-                    senariodata = ""
+                    senariodata = []
+                    count = 0
                     while("#end-senario" not in data.lower()):
                         data = helper.convertToString(client.recv(1024))
-                        senariodata = senariodata + data
-                    print(senariodata)
+                        senariodata[count] = data
+                        count = count+1
+                    #print(senariodata)
+                    for line in senariodata:
+                        with open("test.json") as f:
+                            f.writelines(line)
+                    client.send(helper.convertToBytes("ack"))
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))

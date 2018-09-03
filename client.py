@@ -17,7 +17,8 @@ try:
         print(" Client received data:", data)
         MESSAGE = input("tcpClientB: Enter message to continue/ Enter exit:")
         if("json" in MESSAGE):
-            file = os.path.realpath(os.getcwd()+"TempObjects/")+"senarioData_21146.json"
+            file = os.path.realpath(os.getcwd()+"/TempObjects/")+"/senarioData_21146.json"
+            print(file)
             with open(file) as f:
                 lines = f.readlines()
             tcpClientB.send(helper.convertToBytes("#senario"))
