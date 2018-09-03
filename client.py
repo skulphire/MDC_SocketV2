@@ -2,6 +2,7 @@
 import socket
 from SocketScripts import SocketHelper as helper
 import os
+import time
 
 host = "opsidiumdesigns.com"
 port = 9130
@@ -22,12 +23,15 @@ try:
             with open(file) as f:
                 lines = f.readlines()
             tcpClientB.send(helper.convertToBytes("#senario"))
+            print("#senario")
             d = tcpClientB.recv(BUFFER_SIZE)
             print(helper.convertToString(d))
             for line in lines:
                 tcpClientB.send((helper.convertToBytes(line)))
-                print(line)
+                time.sleep(.1)
+                #print(line)
             tcpClientB.send(helper.convertToBytes("#end-senario"))
+            print("#end-senario")
     tcpClientB.close()
 except:
     tcpClientB.close()
