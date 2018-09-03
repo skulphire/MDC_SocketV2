@@ -106,7 +106,6 @@ class SocketManage(object):
                         data = helper.convertToString(client.recv(1024))
                         senariodata[count] = data
                         count = count+1
-                    #print(senariodata)
                     file = os.path.realpath(os.getcwd() + "/TempObjects/") + "/test.json"
                     for line in senariodata:
                         with open(file) as f:
