@@ -6,7 +6,7 @@ import time
 
 host = "opsidiumdesigns.com"
 port = 9130
-BUFFER_SIZE = 2000
+BUFFER_SIZE = 2048
 MESSAGE = input("tcpClientB: Enter message/ Enter exit:")
 
 tcpClientB = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -28,7 +28,7 @@ try:
             print(helper.convertToString(d))
             for line in lines:
                 tcpClientB.send((helper.convertToBytes(line)))
-                time.sleep(.1)
+                #time.sleep(.1)
                 #print(line)
             tcpClientB.send(helper.convertToBytes("#end-senario"))
             print("#end-senario")

@@ -110,10 +110,12 @@ class SocketManage(object):
                         #exit(0)
                     try:
                         file = os.path.realpath(os.getcwd() + "/TempObjects/") + "/test.json"
-                        print(file)
-                        for line in senariodata:
-                            with open(file,'w') as f:
-                                f.writelines(line)
+                        #print(file)
+                        with open(file, 'w') as f:
+                            f.writelines(senariodata)
+                        #for line in senariodata:
+                        #    with open(file,'w') as f:
+                        #        f.writelines(line)
                         client.send(helper.convertToBytes("ack"))
                     except Exception as e:
                         print(e)
