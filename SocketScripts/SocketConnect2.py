@@ -27,7 +27,7 @@ class ThreadedServer(object):
         client.settimeout(40)
         while True:
             try:
-                data = client.recv(32768)
+                data = client.recv(1024)
                 if data:
                     data = helper.convertToString(data)
                     print(data)
