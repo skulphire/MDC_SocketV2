@@ -28,7 +28,7 @@ try:
             print(helper.convertToString(d))
             for line in lines:
                 tcpClientB.send((helper.convertToBytes(line)))
-                #time.sleep(.1)
+                time.sleep(.02)
                 #print(line)
             tcpClientB.send(helper.convertToBytes("#end-senario"))
             print("#end-senario")
