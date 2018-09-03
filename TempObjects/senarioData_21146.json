@@ -1,0 +1,1004 @@
+{
+  "$id": "1",
+  "maxPeds": 2,
+  "location": null,
+  "senarioPosition": {
+    "$id": "2",
+    "X": 0.0,
+    "Y": 0.0,
+    "Z": 0.0
+  },
+  "suspectBlips": {
+    "$id": "3",
+    "$values": [
+      null,
+      null
+    ]
+  },
+  "suspects": {
+    "$id": "4",
+    "$values": [
+      null,
+      null
+    ]
+  },
+  "senarioType": 0,
+  "players": {
+    "$id": "5",
+    "$values": [
+      {
+        "$id": "6",
+        "LastVehicle": {
+          "pHandle": 8962,
+          "FeatureColor2": {
+            "$id": "7",
+            "B": 10,
+            "G": 10,
+            "R": 10,
+            "Name": "Black",
+            "Index": 0
+          },
+          "FeatureColor1": {
+            "$id": "8",
+            "B": 214,
+            "G": 218,
+            "R": 214,
+            "Name": "FrostWhite",
+            "Index": 113
+          },
+          "SpecularColor": {
+            "$id": "9",
+            "B": 214,
+            "G": 218,
+            "R": 214,
+            "Name": "FrostWhite",
+            "Index": 113
+          },
+          "Color": {
+            "$id": "10",
+            "B": 214,
+            "G": 218,
+            "R": 214,
+            "Name": "FrostWhite",
+            "Index": 113
+          },
+          "Speed": 0.0,
+          "SirenActive": false,
+          "PetrolTankHealth": 1000.0,
+          "PassengerSeats": 3,
+          "LightsOn": false,
+          "Name": "ADMIRAL",
+          "isUpsideDown": false,
+          "isUpright": true,
+          "isAlive": true,
+          "isOnScreen": true,
+          "isOnAllWheels": true,
+          "isDriveable": true,
+          "Health": 1000,
+          "EngineRunning": true,
+          "EngineHealth": 1000.0,
+          "DoorLock": 5,
+          "Dirtyness": 9.643053E-06,
+          "Velocity": {
+            "$id": "11",
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "isRequiredForMission": true,
+          "isOnFire": false,
+          "Model": {
+            "isVehicle": true,
+            "isTrain": false,
+            "isPlane": false,
+            "isPed": false,
+            "isHelicopter": false,
+            "isCar": true,
+            "isBoat": false,
+            "isBike": false,
+            "isValid": true,
+            "isInMemory": true,
+            "Hash": 148777611,
+            "isCollisionDataInMemory": false,
+            "Handle": 148777611
+          },
+          "CurrentRPM": 0.226432383,
+          "CurrentRoom": {
+            "$id": "12"
+          },
+          "RotationQuaternion": {
+            "$id": "13",
+            "X": -0.006029722,
+            "Y": -0.008284809,
+            "Z": -1.3202779E-05,
+            "W": 0.9999475,
+            "Angle": 0.0204962734,
+            "Axis": {
+              "X": -0.006029722,
+              "Y": -0.008284809,
+              "Z": -1.3202779E-05
+            }
+          },
+          "Rotation": {
+            "$id": "14",
+            "X": -0.691018045,
+            "Y": -0.9493719,
+            "Z": 0.004212163
+          },
+          "Direction": {
+            "X": 0.000126187,
+            "Y": 1.0,
+            "Z": 0.0
+          },
+          "Heading": 359.992767,
+          "Position": {
+            "$id": "15",
+            "X": 704.6461,
+            "Y": 1769.35425,
+            "Z": 38.7028122
+          },
+          "MemoryAddress": 134305040,
+          "Metadata": {
+            "Global": {}
+          }
+        },
+        "isPressingHorn": false,
+        "isPlaying": true,
+        "isOnMission": false,
+        "isLocalPlayer": true,
+        "Money": 0,
+        "WantedLevel": 0,
+        "CanControlCharacter": true,
+        "isActive": true,
+        "Team": {
+          "$id": "16",
+          "RelationshipGroup": 63,
+          "Color": {
+            "R": 230,
+            "G": 110,
+            "B": 0,
+            "A": 255,
+            "IsKnownColor": false,
+            "IsEmpty": false,
+            "IsNamedColor": false,
+            "IsSystemColor": false,
+            "Name": "ffe66e00"
+          },
+          "ColorID": 0,
+          "MemberCount": 1,
+          "ID": 0
+        },
+        "Color": {
+          "R": 230,
+          "G": 110,
+          "B": 0,
+          "A": 255,
+          "IsKnownColor": false,
+          "IsEmpty": false,
+          "IsNamedColor": false,
+          "IsSystemColor": false,
+          "Name": "ffe66e00"
+        },
+        "Skin": {
+          "Template": {
+            "$id": "17",
+            "Model": {
+              "$id": "18",
+              "isVehicle": false,
+              "isTrain": false,
+              "isPlane": false,
+              "isPed": true,
+              "isHelicopter": false,
+              "isCar": false,
+              "isBoat": false,
+              "isBike": false,
+              "isValid": true,
+              "isInMemory": true,
+              "Hash": -183203150,
+              "isCollisionDataInMemory": false,
+              "Handle": 4111764146
+            }
+          },
+          "Model": {
+            "$id": "19",
+            "isVehicle": false,
+            "isTrain": false,
+            "isPlane": false,
+            "isPed": true,
+            "isHelicopter": false,
+            "isCar": false,
+            "isBoat": false,
+            "isBike": false,
+            "isValid": true,
+            "isInMemory": true,
+            "Hash": -183203150,
+            "isCollisionDataInMemory": false,
+            "Handle": 4111764146
+          },
+          "Component": {
+            "Face": {
+              "TextureIndex": 0,
+              "ModelIndex": 0,
+              "AvailableTextures": 0,
+              "AvailableModels": 0
+            },
+            "Teeth": {
+              "TextureIndex": 0,
+              "ModelIndex": 0,
+              "AvailableTextures": 0,
+              "AvailableModels": 0
+            },
+            "Hair": {
+              "TextureIndex": 0,
+              "ModelIndex": 0,
+              "AvailableTextures": 0,
+              "AvailableModels": 0
+            },
+            "Jacket": {
+              "TextureIndex": 0,
+              "ModelIndex": 0,
+              "AvailableTextures": 0,
+              "AvailableModels": 0
+            },
+            "Feet": {
+              "TextureIndex": 0,
+              "ModelIndex": 0,
+              "AvailableTextures": 0,
+              "AvailableModels": 0
+            },
+            "Hand": {
+              "TextureIndex": 0,
+              "ModelIndex": 0,
+              "AvailableTextures": 0,
+              "AvailableModels": 0
+            },
+            "Bags": {
+              "TextureIndex": 0,
+              "ModelIndex": 0,
+              "AvailableTextures": 0,
+              "AvailableModels": 0
+            },
+            "LowerBody": {
+              "TextureIndex": 0,
+              "ModelIndex": 0,
+              "AvailableTextures": 1,
+              "AvailableModels": 1
+            },
+            "UpperBody": {
+              "TextureIndex": 0,
+              "ModelIndex": 1,
+              "AvailableTextures": 2,
+              "AvailableModels": 3
+            },
+            "Head": {
+              "TextureIndex": 1,
+              "ModelIndex": 0,
+              "AvailableTextures": 5,
+              "AvailableModels": 2
+            }
+          }
+        },
+        "Model": {
+          "$id": "20",
+          "isVehicle": false,
+          "isTrain": false,
+          "isPlane": false,
+          "isPed": true,
+          "isHelicopter": false,
+          "isCar": false,
+          "isBoat": false,
+          "isBike": false,
+          "isValid": true,
+          "isInMemory": true,
+          "Hash": -183203150,
+          "isCollisionDataInMemory": false,
+          "Handle": 4111764146
+        },
+        "Name": "TheRealAphire",
+        "Group": [],
+        "Character": {
+          "pHandle": 5891,
+          "RelationshipGroup": 63,
+          "PedType": 0,
+          "CurrentVehicle": {
+            "pHandle": 8962,
+            "FeatureColor2": {
+              "$id": "21",
+              "B": 10,
+              "G": 10,
+              "R": 10,
+              "Name": "Black",
+              "Index": 0
+            },
+            "FeatureColor1": {
+              "$id": "22",
+              "B": 214,
+              "G": 218,
+              "R": 214,
+              "Name": "FrostWhite",
+              "Index": 113
+            },
+            "SpecularColor": {
+              "$id": "23",
+              "B": 214,
+              "G": 218,
+              "R": 214,
+              "Name": "FrostWhite",
+              "Index": 113
+            },
+            "Color": {
+              "$id": "24",
+              "B": 214,
+              "G": 218,
+              "R": 214,
+              "Name": "FrostWhite",
+              "Index": 113
+            },
+            "Speed": 0.0,
+            "SirenActive": false,
+            "PetrolTankHealth": 1000.0,
+            "PassengerSeats": 3,
+            "LightsOn": false,
+            "Name": "ADMIRAL",
+            "isUpsideDown": false,
+            "isUpright": true,
+            "isAlive": true,
+            "isOnScreen": true,
+            "isOnAllWheels": true,
+            "isDriveable": true,
+            "Health": 1000,
+            "EngineRunning": true,
+            "EngineHealth": 1000.0,
+            "DoorLock": 5,
+            "Dirtyness": 9.643053E-06,
+            "Velocity": {
+              "$id": "25",
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "isRequiredForMission": true,
+            "isOnFire": false,
+            "Model": {
+              "isVehicle": true,
+              "isTrain": false,
+              "isPlane": false,
+              "isPed": false,
+              "isHelicopter": false,
+              "isCar": true,
+              "isBoat": false,
+              "isBike": false,
+              "isValid": true,
+              "isInMemory": true,
+              "Hash": 148777611,
+              "isCollisionDataInMemory": false,
+              "Handle": 148777611
+            },
+            "CurrentRPM": 0.226432383,
+            "CurrentRoom": {
+              "$id": "26"
+            },
+            "RotationQuaternion": {
+              "$id": "27",
+              "X": -0.006029722,
+              "Y": -0.008284809,
+              "Z": -1.3202779E-05,
+              "W": 0.9999475,
+              "Angle": 0.0204962734,
+              "Axis": {
+                "X": -0.006029722,
+                "Y": -0.008284809,
+                "Z": -1.3202779E-05
+              }
+            },
+            "Rotation": {
+              "$id": "28",
+              "X": -0.691018045,
+              "Y": -0.9493719,
+              "Z": 0.004212163
+            },
+            "Direction": {
+              "X": 0.000126187,
+              "Y": 1.0,
+              "Z": 0.0
+            },
+            "Heading": 359.992767,
+            "Position": {
+              "$id": "29",
+              "X": 704.6461,
+              "Y": 1769.35425,
+              "Z": 38.7028122
+            },
+            "MemoryAddress": 134305040,
+            "Metadata": {
+              "Global": {}
+            }
+          },
+          "Euphoria": {
+            "PedalLegs": {},
+            "LeanToPosition": {},
+            "Grab": {
+              "isGrabbed": false,
+              "isRightHandGrabbed": false,
+              "isLeftHandGrabbed": false
+            },
+            "BeingShot": {},
+            "BodyBalance": {
+              "isBalanced": true
+            },
+            "ArmsWindmill": {}
+          },
+          "Weapons": {
+            "AnyThrown": {
+              "MaxAmmoInClip": 0,
+              "MaxAmmo": 0,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 0,
+              "Type": -1
+            },
+            "AnyHeavyWeapon": {
+              "MaxAmmoInClip": 0,
+              "MaxAmmo": 0,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 0,
+              "Type": -1
+            },
+            "AnySniperRifle": {
+              "MaxAmmoInClip": 0,
+              "MaxAmmo": 0,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 0,
+              "Type": -1
+            },
+            "AnyAssaultRifle": {
+              "MaxAmmoInClip": 0,
+              "MaxAmmo": 0,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 0,
+              "Type": -1
+            },
+            "AnySMG": {
+              "MaxAmmoInClip": 0,
+              "MaxAmmo": 0,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 0,
+              "Type": -1
+            },
+            "AnyShotgun": {
+              "MaxAmmoInClip": 10,
+              "MaxAmmo": 80,
+              "AmmoInClip": 0,
+              "Ammo": 5,
+              "isPresent": true,
+              "Slot": 3,
+              "Type": 11
+            },
+            "AnyHandgun": {
+              "MaxAmmoInClip": 17,
+              "MaxAmmo": 1500,
+              "AmmoInClip": 0,
+              "Ammo": 90,
+              "isPresent": true,
+              "Slot": 2,
+              "Type": 7
+            },
+            "AnyMelee": {
+              "MaxAmmoInClip": 0,
+              "MaxAmmo": 25000,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": true,
+              "Slot": 1,
+              "Type": 3
+            },
+            "RocketLauncher": {
+              "MaxAmmoInClip": 1,
+              "MaxAmmo": 8,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 7,
+              "Type": 18
+            },
+            "SniperRifle_M40A1": {
+              "MaxAmmoInClip": 5,
+              "MaxAmmo": 50,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 6,
+              "Type": 17
+            },
+            "BasicSniperRifle": {
+              "MaxAmmoInClip": 10,
+              "MaxAmmo": 50,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 6,
+              "Type": 16
+            },
+            "AssaultRifle_M4": {
+              "MaxAmmoInClip": 30,
+              "MaxAmmo": 600,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 5,
+              "Type": 15
+            },
+            "AssaultRifle_AK47": {
+              "MaxAmmoInClip": 30,
+              "MaxAmmo": 600,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 5,
+              "Type": 14
+            },
+            "MP5": {
+              "MaxAmmoInClip": 30,
+              "MaxAmmo": 1200,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 4,
+              "Type": 13
+            },
+            "Uzi": {
+              "MaxAmmoInClip": 50,
+              "MaxAmmo": 1200,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 4,
+              "Type": 12
+            },
+            "BarettaShotgun": {
+              "MaxAmmoInClip": 10,
+              "MaxAmmo": 80,
+              "AmmoInClip": 0,
+              "Ammo": 5,
+              "isPresent": true,
+              "Slot": 3,
+              "Type": 11
+            },
+            "BasicShotgun": {
+              "MaxAmmoInClip": 8,
+              "MaxAmmo": 80,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 3,
+              "Type": 10
+            },
+            "DesertEagle": {
+              "MaxAmmoInClip": 9,
+              "MaxAmmo": 1500,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 2,
+              "Type": 9
+            },
+            "Glock": {
+              "MaxAmmoInClip": 17,
+              "MaxAmmo": 1500,
+              "AmmoInClip": 0,
+              "Ammo": 90,
+              "isPresent": true,
+              "Slot": 2,
+              "Type": 7
+            },
+            "MolotovCocktails": {
+              "MaxAmmoInClip": 1,
+              "MaxAmmo": 25,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 8,
+              "Type": 5
+            },
+            "Grenades": {
+              "MaxAmmoInClip": 1,
+              "MaxAmmo": 25,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 8,
+              "Type": 4
+            },
+            "Knife": {
+              "MaxAmmoInClip": 0,
+              "MaxAmmo": 25000,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": true,
+              "Slot": 1,
+              "Type": 3
+            },
+            "BaseballBat": {
+              "MaxAmmoInClip": 0,
+              "MaxAmmo": 25000,
+              "AmmoInClip": 0,
+              "Ammo": 0,
+              "isPresent": false,
+              "Slot": 1,
+              "Type": 1
+            },
+            "Unarmed": {
+              "MaxAmmoInClip": 1,
+              "MaxAmmo": 1,
+              "AmmoInClip": 1,
+              "Ammo": 1,
+              "isPresent": true,
+              "Slot": 0,
+              "Type": 0
+            },
+            "CurrentType": 7,
+            "Current": {
+              "MaxAmmoInClip": 17,
+              "MaxAmmo": 1500,
+              "AmmoInClip": 0,
+              "Ammo": 90,
+              "isPresent": true,
+              "Slot": 2,
+              "Type": 7
+            }
+          },
+          "Animation": {},
+          "Task": {},
+          "isSwimming": false,
+          "isShooting": false,
+          "isRagdoll": false,
+          "isOnScreen": true,
+          "isMissionCharacter": true,
+          "isInWater": false,
+          "isInMeleeCombat": false,
+          "isInjured": false,
+          "isInGroup": true,
+          "isInCombat": false,
+          "isInAir": false,
+          "isIdle": true,
+          "isGettingUp": false,
+          "isGettingIntoAVehicle": false,
+          "isDead": false,
+          "isAliveAndWell": true,
+          "isAlive": true,
+          "HeightAboveGround": 0.5697441,
+          "Money": 0,
+          "Armor": 0,
+          "Health": 100,
+          "Skin": {
+            "Template": {
+              "$id": "30",
+              "Model": {
+                "$id": "31",
+                "isVehicle": false,
+                "isTrain": false,
+                "isPlane": false,
+                "isPed": true,
+                "isHelicopter": false,
+                "isCar": false,
+                "isBoat": false,
+                "isBike": false,
+                "isValid": true,
+                "isInMemory": true,
+                "Hash": -183203150,
+                "isCollisionDataInMemory": false,
+                "Handle": 4111764146
+              }
+            },
+            "Model": {
+              "isVehicle": false,
+              "isTrain": false,
+              "isPlane": false,
+              "isPed": true,
+              "isHelicopter": false,
+              "isCar": false,
+              "isBoat": false,
+              "isBike": false,
+              "isValid": true,
+              "isInMemory": true,
+              "Hash": -183203150,
+              "isCollisionDataInMemory": false,
+              "Handle": 4111764146
+            },
+            "Component": {
+              "Face": {
+                "TextureIndex": 0,
+                "ModelIndex": 0,
+                "AvailableTextures": 0,
+                "AvailableModels": 0
+              },
+              "Teeth": {
+                "TextureIndex": 0,
+                "ModelIndex": 0,
+                "AvailableTextures": 0,
+                "AvailableModels": 0
+              },
+              "Hair": {
+                "TextureIndex": 0,
+                "ModelIndex": 0,
+                "AvailableTextures": 0,
+                "AvailableModels": 0
+              },
+              "Jacket": {
+                "TextureIndex": 0,
+                "ModelIndex": 0,
+                "AvailableTextures": 0,
+                "AvailableModels": 0
+              },
+              "Feet": {
+                "TextureIndex": 0,
+                "ModelIndex": 0,
+                "AvailableTextures": 0,
+                "AvailableModels": 0
+              },
+              "Hand": {
+                "TextureIndex": 0,
+                "ModelIndex": 0,
+                "AvailableTextures": 0,
+                "AvailableModels": 0
+              },
+              "Bags": {
+                "TextureIndex": 0,
+                "ModelIndex": 0,
+                "AvailableTextures": 0,
+                "AvailableModels": 0
+              },
+              "LowerBody": {
+                "TextureIndex": 0,
+                "ModelIndex": 0,
+                "AvailableTextures": 1,
+                "AvailableModels": 1
+              },
+              "UpperBody": {
+                "TextureIndex": 0,
+                "ModelIndex": 1,
+                "AvailableTextures": 2,
+                "AvailableModels": 3
+              },
+              "Head": {
+                "TextureIndex": 1,
+                "ModelIndex": 0,
+                "AvailableTextures": 5,
+                "AvailableModels": 2
+              }
+            }
+          },
+          "Gender": 0,
+          "Velocity": {
+            "$id": "32",
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "isRequiredForMission": true,
+          "isOnFire": false,
+          "Model": {
+            "isVehicle": false,
+            "isTrain": false,
+            "isPlane": false,
+            "isPed": true,
+            "isHelicopter": false,
+            "isCar": false,
+            "isBoat": false,
+            "isBike": false,
+            "isValid": true,
+            "isInMemory": true,
+            "Hash": -183203150,
+            "isCollisionDataInMemory": false,
+            "Handle": 4111764146
+          },
+          "CurrentRoom": {
+            "$id": "33"
+          },
+          "Direction": {
+            "X": 0.000126187,
+            "Y": 1.0,
+            "Z": 0.0
+          },
+          "Heading": 359.992767,
+          "Position": {
+            "$id": "34",
+            "X": 704.6461,
+            "Y": 1769.35425,
+            "Z": 38.7028122
+          },
+          "MemoryAddress": 133248048,
+          "Metadata": {
+            "Global": {}
+          }
+        },
+        "Index": 0,
+        "ID": 0
+      }
+    ]
+  },
+  "localPlayer": {
+    "$ref": "6"
+  },
+  "pedGender": {
+    "$id": "35",
+    "$values": [
+      null,
+      null
+    ]
+  },
+  "alreadySpawnedPeds": false,
+  "stoppedSuspect": {
+    "$id": "36",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "arrested": {
+    "$id": "37",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "moving": {
+    "$id": "38",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "inPoliceCar": {
+    "$id": "39",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "atPolice": {
+    "$id": "40",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "detained": {
+    "$id": "41",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "detainingSuspect": {
+    "$id": "42",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "release": {
+    "$id": "43",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "arrestingSuspect": {
+    "$id": "44",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "investigating": {
+    "$id": "45",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "alreadyGoingPolice": {
+    "$id": "46",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "noID": {
+    "$id": "47",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "suspectIDs": {
+    "$id": "48",
+    "$values": [
+      {
+        "$id": "49",
+        "suspectName": " ",
+        "wantedTimes": null,
+        "age": null,
+        "citeTimes": null,
+        "filename": null,
+        "DOBday": null,
+        "DOBmonth": null,
+        "DOByear": null,
+        "licStat": "",
+        "gender": null,
+        "stopTimes": null,
+        "inputs": [
+          " ",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "$id": "50",
+        "suspectName": " ",
+        "wantedTimes": null,
+        "age": null,
+        "citeTimes": null,
+        "filename": null,
+        "DOBday": null,
+        "DOBmonth": null,
+        "DOByear": null,
+        "licStat": "",
+        "gender": null,
+        "stopTimes": null,
+        "inputs": [
+          " ",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "",
+          null,
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  "askedWhatDoing": {
+    "$id": "51",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "askedAnythingKnowAbout": {
+    "$id": "52",
+    "$values": [
+      false,
+      false
+    ]
+  },
+  "alreadyFrisked": {
+    "$id": "53",
+    "$values": [
+      false,
+      false
+    ]
+  }
+}
