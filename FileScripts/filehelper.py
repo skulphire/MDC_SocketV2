@@ -48,7 +48,7 @@ def createReport(folder, file, data, org="ADPS"):
         print(e)
 def getSuspect(file, org="ADPS"):
     path = os.path.realpath(workingdir + org + "-SuspectDatabase") +"/"
-    #file = file + ".txt"
+    file = file + ".txt"
     #print("get Suspect filename: "+file)
     try:
         send = ""
