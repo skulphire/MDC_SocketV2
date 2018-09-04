@@ -99,7 +99,7 @@ class SocketManage(object):
                     else:
                         client.send(helper.convertToBytes("Invalid"))
                 elif "#senario" in data.lower():
-                    client.send(helper.convertToBytes("ack"))
+                    #client.send(helper.convertToBytes("ack"))
                     senariodata = []
                     try:
                         while("#end-senario" not in data.lower()):
@@ -114,7 +114,7 @@ class SocketManage(object):
                         #print(file)
                         with open(file, 'w') as f:
                             f.writelines(senariodata)
-                        client.send(helper.convertToBytes("ack"))
+                        #client.send(helper.convertToBytes("ack"))
                     except Exception as e:
                         print(e)
                         client.send(helper.convertToBytes("invalid"))
