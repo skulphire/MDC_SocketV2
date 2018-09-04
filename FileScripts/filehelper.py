@@ -28,22 +28,22 @@ def getReport(folder,file, org="ADPS"):
     path = os.path.realpath(workingdir + org + "-ReportDatabase/" + folder) + "/"
     file = file+".txt"
     try:
-        send = ""
+        # send = ""
         with open(path+file) as f:
             lines = f.readlines()
-        for line in lines:
-            send = send+line+","
-        return send
+        # for line in lines:
+        #     send = send+line+","
+        return lines
     except Exception as e:
         print(e)
         return "none"
 def createReport(folder, file, data, org="ADPS"):
     path = os.path.realpath(workingdir + org + "-ReportDatabase/" + folder) + "/"
     file = file+".txt"
-    report = data.split(",")
+    #report = data.split(",")
     try:
         with open(path+file,'w') as f:
-            f.writelines(report)
+            f.writelines(data)
     except Exception as e:
         print(e)
 def getSuspect(file, org="ADPS"):

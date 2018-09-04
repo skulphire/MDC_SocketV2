@@ -30,6 +30,7 @@ class ThreadedServer(object):
                 data = client.recv(1024)
                 if data:
                     data = helper.convertToString(data)
+                    #for troubleshooting
                     print(data)
                     self.smanage.testdata(data,client, self.tcpServer)
             except Exception:
