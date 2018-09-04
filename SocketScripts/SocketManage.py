@@ -91,7 +91,7 @@ class SocketManage(object):
                     client.send(helper.convertToBytes(filehelper.getReport(splits[1],splits[2])))
                 #createreport:folder:filename:data
                 elif "createreport" in data.lower():
-                    splits = data.split(":")
+                    splits = data.split("^")
                     folder = splits[1]
                     filename = splits[2]
                     count = 3
