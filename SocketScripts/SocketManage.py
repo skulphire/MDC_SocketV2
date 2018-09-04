@@ -118,12 +118,6 @@ class SocketManage(object):
                     except Exception as e:
                         print(e)
                         client.send(helper.convertToBytes("invalid"))
-                elif "sendback" in data.lower():
-                    file = os.path.realpath(os.getcwd() + "/TempObjects/") + "/test.json"
-                    with open(file, 'r') as f:
-                        lines = f.readlines()
-                    for line in lines:
-                        client.send(helper.convertToBytes(line))
                 elif "#end-senario" in data.lower():
                     print("#end-senario")
                 else:
