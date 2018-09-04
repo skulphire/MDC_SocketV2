@@ -94,7 +94,11 @@ class SocketManage(object):
                     splits = data.split(":")
                     folder = splits[1]
                     filename = splits[2]
-                    report = splits[3]
+                    count = 3
+                    report = ""
+                    while(count <= len(splits)-1):
+                        report = report +splits[count]
+                        count = count +1
                     filehelper.createReport(folder,filename,report)
                 elif "getsuspect" in data.lower():
                     splits = data.split(":")
