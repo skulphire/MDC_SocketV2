@@ -22,7 +22,7 @@ while again:
     with open(real+filename, 'w') as f:
         f.write(rolename+'\n'+email+'\n'+gamertag+'\n'+super+'\n')
     print("User created")
-    another = input("Add another user? (Y/N")
+    another = input("Add another user? (Y/N) :")
     if("y" in another):
         again = True
     else:
