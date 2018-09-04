@@ -37,6 +37,15 @@ def getReport(folder,file, org="ADPS"):
     except Exception as e:
         print(e)
         return "none"
+def createReport(folder, file, data, org="ADPS"):
+    path = os.path.realpath(workingdir + org + "-ReportDatabase/" + folder) + "/"
+    file = file+".txt"
+    report = data.split(",")
+    try:
+        with open(path+file) as f:
+            f.writelines(report)
+    except Exception as e:
+        print(e)
 def getSuspect(file, org="ADPS"):
     path = os.path.realpath(workingdir + org + "-SuspectDatabase") +"/"
     #file = file + ".txt"

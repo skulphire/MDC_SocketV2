@@ -89,6 +89,13 @@ class SocketManage(object):
                 elif "getreport" in data.lower():
                     splits = data.split(":")
                     client.send(helper.convertToBytes(filehelper.getReport(splits[1],splits[2])))
+                #createreport:folder:filename:data
+                elif "createreport" in data.lower():
+                    splits = data.split(":")
+                    folder = splits[1]
+                    filename = splits[2]
+                    report = splits[3]
+                    filehelper.createReport(folder,filename,report)
                 elif "getsuspect" in data.lower():
                     splits = data.split(":")
                     client.send(helper.convertToBytes(filehelper.getSuspect(splits[1])))
@@ -98,28 +105,6 @@ class SocketManage(object):
                         client.send(helper.convertToBytes("Valid"))
                     else:
                         client.send(helper.convertToBytes("Invalid"))
-                elif "#senario" in data.lower():
-                    #client.send(helper.convertToBytes("ack"))
-                    senariodata = []
-                    try:
-                        while("#end-senario" not in data.lower()):
-                            data = helper.convertToString(client.recv(2048))
-                            if("#end-senario" not in data.lower()):
-                                #print(data)
-                                senariodata.append(data)
-                    except Exception as e:
-                        print(e)
-                    try:
-                        file = os.path.realpath(os.getcwd() + "/TempObjects/") + "/test.json"
-                        #print(file)
-                        with open(file, 'w') as f:
-                            f.writelines(senariodata)
-                        #client.send(helper.convertToBytes("ack"))
-                    except Exception as e:
-                        print(e)
-                        client.send(helper.convertToBytes("invalid"))
-                elif "#end-senario" in data.lower():
-                    print("#end-senario")
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
