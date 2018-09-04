@@ -28,7 +28,7 @@ def initValidUsers(org = "ADPS"):
         change = os.listdir(dir)
         for user in change:
             splits = user.split(".")
-            print("User>" + splits[0])
+            #print("User>" + splits[0])
             globals.AREUSERSLOGGEDIN[splits[0]] = False
             globals.VALIDUSERS.append(splits[0])
     except Exception:
