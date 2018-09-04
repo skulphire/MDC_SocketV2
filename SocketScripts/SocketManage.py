@@ -105,19 +105,15 @@ class SocketManage(object):
                         while("#end-senario" not in data.lower()):
                             data = helper.convertToString(client.recv(2048))
                             if("#end-senario" not in data.lower()):
-                                print(data)
+                                #print(data)
                                 senariodata.append(data)
                     except Exception as e:
                         print(e)
-                        #exit(0)
                     try:
                         file = os.path.realpath(os.getcwd() + "/TempObjects/") + "/test.json"
                         #print(file)
                         with open(file, 'w') as f:
                             f.writelines(senariodata)
-                        #for line in senariodata:
-                        #    with open(file,'w') as f:
-                        #        f.writelines(line)
                         client.send(helper.convertToBytes("ack"))
                     except Exception as e:
                         print(e)
