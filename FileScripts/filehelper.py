@@ -49,7 +49,7 @@ def createReport(folder, file, data, org="ADPS"):
 def getSuspect(file, org="ADPS"):
     path = os.path.realpath(workingdir + org + "-SuspectDatabase") +"/"
     #file = file + ".txt"
-    print("get Suspect filename: "+file)
+    #print("get Suspect filename: "+file)
     try:
         send = ""
         with open(path + file) as f:
@@ -62,6 +62,9 @@ def getSuspect(file, org="ADPS"):
         return "none"
 def newsuspect(filename,data,org="ADPS"):
     path = os.path.realpath(workingdir + org + "-SuspectDatabase") + "/"
-    # try:
-    #     with open(path+filename) as f:
-    #         f.writelines()
+    file = filename+".txt"
+    try:
+        with open(path+file,'w') as f:
+            f.writelines(data)
+    except Exception as e:
+        print(e)
