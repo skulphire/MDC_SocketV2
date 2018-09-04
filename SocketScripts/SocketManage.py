@@ -105,10 +105,7 @@ class SocketManage(object):
                     client.send(helper.convertToBytes(filehelper.getSuspect(splits[1])))
                 elif "createsuspect" in data.lower():
                     splits = data.split(":")
-                    if(filehelper.newsuspect(splits[1],splits[2])):
-                        client.send(helper.convertToBytes("Valid"))
-                    else:
-                        client.send(helper.convertToBytes("Invalid"))
+                    filehelper.newsuspect(splits[1], splits[2])
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))

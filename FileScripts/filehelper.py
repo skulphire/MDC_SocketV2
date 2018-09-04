@@ -55,7 +55,7 @@ def getSuspect(file, org="ADPS"):
         with open(path + file) as f:
             lines = f.readlines()
         for line in lines:
-            send = send + line + ","
+            send = send + line
         return send
     except Exception as e:
         print(e)
