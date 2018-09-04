@@ -78,7 +78,7 @@ class SocketManage(object):
                 elif "convo" in data.lower():
                     splits = data.split(":")
                     client.send(helper.convertToBytes(senariosconversations.readScript(splits[1])))
-                elif "checkcadpsontents" in data.lower():
+                elif "checkadpscontents" in data.lower():
                     splits = data.split(":")
                     directoryToCheck = splits[1]
                     client.send(helper.convertToBytes(filehelper.checkADPSdirectory(directoryToCheck)))
