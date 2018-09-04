@@ -124,6 +124,8 @@ class SocketManage(object):
                         lines = f.readlines()
                     for line in lines:
                         client.send(helper.convertToBytes(line))
+                elif "#end-senario" in data.lower():
+                    print("#end-senario")
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
