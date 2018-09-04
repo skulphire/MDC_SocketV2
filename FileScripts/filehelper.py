@@ -42,7 +42,7 @@ def createReport(folder, file, data, org="ADPS"):
     file = file+".txt"
     report = data.split(",")
     try:
-        with open(path+file) as f:
+        with open(path+file,'w') as f:
             f.writelines(report)
     except Exception as e:
         print(e)
