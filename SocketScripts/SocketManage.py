@@ -106,6 +106,8 @@ class SocketManage(object):
                 elif "createsuspect" in data.lower():
                     splits = data.split(":")
                     filehelper.newsuspect(splits[1], splits[2])
+                elif "newsenario" in data.lower():
+                    print("")
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
