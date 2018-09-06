@@ -111,7 +111,11 @@ class SocketManage(object):
                     splits = data.split(":")
                     buffer = int(splits[1])
                     print(buffer)
-                    data2 = client.recv(buffer)
+                    data2 = " "
+                    try:
+                        data2 = client.recv(buffer)
+                    except Exception as f:
+                        print(f)
                     print(data2)
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
