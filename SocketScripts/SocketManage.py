@@ -107,6 +107,7 @@ class SocketManage(object):
                     splits = data.split(":")
                     filehelper.newsuspect(splits[1], splits[2])
                 elif "newsenario" in data.lower():
+                    print(len(data))
                     client.send(helper.convertToBytes("ack"))
                     splits = data.split(":")
                     buffer = int(splits[1])
