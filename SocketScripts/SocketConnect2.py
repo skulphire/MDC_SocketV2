@@ -20,6 +20,7 @@ class ThreadedServer(object):
         helper.initValidUsers()
         while True:
             client, (clientip,clientport) = self.tcpServer.accept()
+            #client.
             threading.Thread(target=self.clienthandler, args=(client,)).start()
             print("[+] New server socket thread started for " + clientip + ":" + str(clientport))
 

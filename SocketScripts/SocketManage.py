@@ -110,6 +110,7 @@ class SocketManage(object):
                     client.send(helper.convertToBytes("ack"))
                     splits = data.split(":")
                     buffer = int(splits[1])
+                    print(buffer)
                     data2 = client.recv(buffer)
                     print(data2)
                 else:
