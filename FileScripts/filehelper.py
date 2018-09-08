@@ -82,3 +82,16 @@ def newsenario(filedata,filename,createfile):
                 f.write(filedata)
         except Exception as e:
             print(e)
+def getPoliceStations():
+    path = os.path.realpath(workingdir + "Senarios/Locations") + "/"
+    file = "policeStations.txt"
+    try:
+        send = ""
+        with open(path + file) as f:
+            lines = f.readlines()
+        for line in lines:
+            send = send + ":"+line
+        return send
+    except Exception as e:
+        print(e)
+        return "none"
