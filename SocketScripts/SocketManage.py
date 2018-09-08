@@ -106,18 +106,12 @@ class SocketManage(object):
                 elif "createsuspect" in data.lower():
                     splits = data.split(":")
                     filehelper.newsuspect(splits[1], splits[2])
-                elif "newsenario" in data.lower():
-                    print(helper.convertToBytes(data))
-                    client.send(helper.convertToBytes("ack"))
-                    splits = data.split(":")
-                    buffer = int(splits[1])
-                    print(buffer)
-                    data2 = "#########################################################################"
-                    try:
-                        data2 = client.recv(buffer)
-                    except Exception as f:
-                        print(f)
-                    print(data2)
+                elif "senarioobject" in data.lower():
+                    file =  ""
+                    while(helper.convertToString(file) != "#senarioobjectend"):
+                        file = client.recv(1024)
+                        print("getting file")
+                    print("senarioobjectend")
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))
