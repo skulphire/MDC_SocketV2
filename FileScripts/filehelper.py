@@ -68,10 +68,17 @@ def newsuspect(filename,data,org="ADPS"):
             f.writelines(data)
     except Exception as e:
         print(e)
-def newsenario(filedata,filename):
+def newsenario(filedata,filename,createfile):
     path = os.path.realpath(workingdir + "Senarios/InProgress") + "/"
-    try:
-        with open(path+filename,'wb') as f:
-            f.write(bytes(filedata))
-    except Exception as e:
-        print(e)
+    if createfile:
+        try:
+            with open(path+filename,'wb') as f:
+                f.write(filedata)
+        except Exception as e:
+            print(e)
+    else:
+        try:
+            with open(path+filename,'ab') as f:
+                f.write(filedata)
+        except Exception as e:
+            print(e)
