@@ -72,8 +72,8 @@ def newsenario(filedata,filename,createfile):
     path = os.path.realpath(workingdir + "Senarios/InProgress") + "/"
     if createfile:
         try:
-            with open(path+filename,'wb') as f:
-                f.write(filedata)
+            f = open(path+filename,'wb')
+            f.close()
         except Exception as e:
             print(e)
     else:
