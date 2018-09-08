@@ -106,15 +106,15 @@ class SocketManage(object):
                 elif "createsuspect" in data.lower():
                     splits = data.split(":")
                     filehelper.newsuspect(splits[1], splits[2])
-                elif "senarioobject" in data.lower():
+                elif "newsenarioobject" in data.lower():
                     fname = client.recv(1024)
                     file =  ""
                     filehelper.newsenario(file, helper.convertToString(fname), True)
                     while(helper.convertToString(file) != "#senarioobjectend"):
-                        if(helper.convertToString(file) != "#senarioobjectend"):
                             file = client.recv(1024)
-                            filehelper.newsenario(file, helper.convertToString(fname), False)
-                            print("getting file")
+                            if (helper.convertToString(file) != "#senarioobjectend"):
+                                filehelper.newsenario(file, helper.convertToString(fname), False)
+                                print("getting file")
                     print("senarioobjectend")
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
