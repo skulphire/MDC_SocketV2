@@ -112,10 +112,10 @@ class SocketManage(object):
                     filehelper.newsenario(file, helper.convertToString(fname), True)
                     while(helper.convertToString(file) != "#senarioobjectend"):
                         if(helper.convertToString(file) != "#senarioobjectend"):
-                            file = file+client.recv(1024)
+                            file = client.recv(1024)
+                            filehelper.newsenario(file, helper.convertToString(fname), False)
                             print("getting file")
                     print("senarioobjectend")
-                    filehelper.newsenario(file,helper.convertToString(fname), False)
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))

@@ -73,12 +73,12 @@ def newsenario(filedata,filename,createfile):
     if createfile:
         try:
             with open(path+filename,'wb') as f:
-                f.write(bytes(filedata))
+                f.write(filedata)
         except Exception as e:
             print(e)
     else:
         try:
             with open(path+filename,'ab') as f:
-                f.write(bytes(filedata))
+                f.write(filedata)
         except Exception as e:
             print(e)
