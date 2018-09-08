@@ -72,6 +72,6 @@ def newsenario(filedata,filename):
     path = os.path.realpath(workingdir + "Senarios/InProgress") + "/"
     try:
         with open(path+filename,'wb') as f:
-            f.write(filedata)
+            f.write(bytes(filedata))
     except Exception as e:
         print(e)
