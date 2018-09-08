@@ -109,8 +109,9 @@ class SocketManage(object):
                 elif "senarioobject" in data.lower():
                     file =  ""
                     while(helper.convertToString(file) != "#senarioobjectend"):
-                        file = client.recv(1024)
-                        print("getting file")
+                        if(helper.convertToString(file) != "#senarioobjectend"):
+                            file = file+client.recv(1024)
+                            print("getting file")
                     print("senarioobjectend")
                     fname = client.recv(1024)
                     filehelper.newsenario(file,helper.convertToString(fname))
