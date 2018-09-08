@@ -35,7 +35,10 @@ def initValidUsers(org = "ADPS"):
         print("No Files Found in: "+dir)
 
 def convertToString(bite):
-    str = bite.decode("utf-8")
+    try:
+        str = bite.decode("utf-8")
+    except Exception:
+        str = ""
     return str
 def convertToBytes(str):
     byteStr = bytes(str, 'utf-8')
