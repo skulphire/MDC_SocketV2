@@ -28,14 +28,17 @@ def initValidUsers(org = "ADPS"):
         change = os.listdir(dir)
         for user in change:
             splits = user.split(".")
-            print("User>" + splits[0])
+            #print("User>" + splits[0])
             globals.AREUSERSLOGGEDIN[splits[0]] = False
             globals.VALIDUSERS.append(splits[0])
     except Exception:
         print("No Files Found in: "+dir)
 
 def convertToString(bite):
-    str = bite.decode("utf-8")
+    try:
+        str = bite.decode("utf-8")
+    except Exception:
+        str = ""
     return str
 def convertToBytes(str):
     byteStr = bytes(str, 'utf-8')

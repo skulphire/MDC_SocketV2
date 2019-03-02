@@ -20,17 +20,19 @@ class ThreadedServer(object):
         helper.initValidUsers()
         while True:
             client, (clientip,clientport) = self.tcpServer.accept()
+            #client.
             threading.Thread(target=self.clienthandler, args=(client,)).start()
             print("[+] New server socket thread started for " + clientip + ":" + str(clientport))
 
     def clienthandler(self,client):
-        client.settimeout(40)
+        client.settimeout(280)
         while True:
             try:
                 data = client.recv(1024)
                 if data:
                     data = helper.convertToString(data)
-                    print(data)
+                    #for troubleshooting
+                    #print(data)
                     self.smanage.testdata(data,client, self.tcpServer)
             except Exception:
                 print("Breaking thread...")

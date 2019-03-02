@@ -78,7 +78,7 @@ class SocketManage(object):
                 elif "convo" in data.lower():
                     splits = data.split(":")
                     client.send(helper.convertToBytes(senariosconversations.readScript(splits[1])))
-                elif "checkcadpsontents" in data.lower():
+                elif "checkadpscontents" in data.lower():
                     splits = data.split(":")
                     directoryToCheck = splits[1]
                     client.send(helper.convertToBytes(filehelper.checkADPSdirectory(directoryToCheck)))
@@ -89,43 +89,35 @@ class SocketManage(object):
                 elif "getreport" in data.lower():
                     splits = data.split(":")
                     client.send(helper.convertToBytes(filehelper.getReport(splits[1],splits[2])))
+                #createreport:folder:filename:data
+                elif "createreport" in data.lower():
+                    splits = data.split("^")
+                    folder = splits[1]
+                    filename = splits[2]
+                    count = 3
+                    report = ""
+                    while(count <= len(splits)-1):
+                        report = report +splits[count]
+                        count = count +1
+                    filehelper.createReport(folder,filename,report)
                 elif "getsuspect" in data.lower():
                     splits = data.split(":")
                     client.send(helper.convertToBytes(filehelper.getSuspect(splits[1])))
                 elif "createsuspect" in data.lower():
                     splits = data.split(":")
-                    if(filehelper.newsuspect(splits[1],splits[2])):
-                        client.send(helper.convertToBytes("Valid"))
-                    else:
-                        client.send(helper.convertToBytes("Invalid"))
-                elif "#senario" in data.lower():
-                    #client.send(helper.convertToBytes("ack"))
-                    senariodata = []
-                    try:
-                        while("#end-senario" not in data.lower()):
-                            data = helper.convertToString(client.recv(2048))
-                            if("#end-senario" not in data.lower()):
-                                #print(data)
-                                senariodata.append(data)
-                    except Exception as e:
-                        print(e)
-                    try:
-                        file = os.path.realpath(os.getcwd() + "/TempObjects/") + "/test.json"
-                        #print(file)
-                        with open(file, 'w') as f:
-                            f.writelines(senariodata)
-                        #client.send(helper.convertToBytes("ack"))
-                    except Exception as e:
-                        print(e)
-                        client.send(helper.convertToBytes("invalid"))
-                elif "sendback" in data.lower():
-                    file = os.path.realpath(os.getcwd() + "/TempObjects/") + "/test.json"
-                    with open(file, 'r') as f:
-                        lines = f.readlines()
-                    for line in lines:
-                        client.send(helper.convertToBytes(line))
-                elif "#end-senario" in data.lower():
-                    print("#end-senario")
+                    filehelper.newsuspect(splits[1], splits[2])
+                elif "newsenarioobject" in data.lower():
+                    fname = client.recv(1024)
+                    file =  ""
+                    filehelper.newsenario(file, helper.convertToString(fname), True)
+                    while(helper.convertToString(file) != "#senarioobjectend"):
+                            file = client.recv(1024)
+                            if (helper.convertToString(file) != "#senarioobjectend"):
+                                filehelper.newsenario(file, helper.convertToString(fname), False)
+                                print("getting file")
+                    print("senarioobjectend")
+                elif "getpolicestations" in data.lower():
+                    client.send(helper.convertToBytes(filehelper.getPoliceStations()))
                 else:
                     print("   %s>> %s" % (globals.CONNECTIONS[client], data))
                     client.send(helper.convertToBytes("rec"))

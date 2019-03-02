@@ -14,6 +14,8 @@ def checkIfSuper(user,org="ADPS"):
                 lines = f.readlines()
             if ("Super" in lines[3]):
                 return True
+            else:
+                return False
         else:
             print("User does not exist")
             return False

@@ -32,27 +32,66 @@ def getReport(folder,file, org="ADPS"):
         with open(path+file) as f:
             lines = f.readlines()
         for line in lines:
-            send = send+line+","
+            send = send+line
         return send
     except Exception as e:
         print(e)
         return "none"
+def createReport(folder, file, data, org="ADPS"):
+    path = os.path.realpath(workingdir + org + "-ReportDatabase/" + folder) + "/"
+    file = file+".txt"
+    #report = data.split(",")
+    try:
+        with open(path+file,'w') as f:
+            f.writelines(data)
+    except Exception as e:
+        print(e)
 def getSuspect(file, org="ADPS"):
     path = os.path.realpath(workingdir + org + "-SuspectDatabase") +"/"
-    #file = file + ".txt"
-    print("get Suspect filename: "+file)
+    file = file + ".txt"
+    #print("get Suspect filename: "+file)
     try:
         send = ""
         with open(path + file) as f:
             lines = f.readlines()
         for line in lines:
-            send = send + line + ","
+            send = send + line
         return send
     except Exception as e:
         print(e)
         return "none"
 def newsuspect(filename,data,org="ADPS"):
     path = os.path.realpath(workingdir + org + "-SuspectDatabase") + "/"
-    # try:
-    #     with open(path+filename) as f:
-    #         f.writelines()
+    file = filename+".txt"
+    try:
+        with open(path+file,'w') as f:
+            f.writelines(data)
+    except Exception as e:
+        print(e)
+def newsenario(filedata,filename,createfile):
+    path = os.path.realpath(workingdir + "Senarios/InProgress") + "/"
+    if createfile:
+        try:
+            f = open(path+filename,'wb')
+            f.close()
+        except Exception as e:
+            print(e)
+    else:
+        try:
+            with open(path+filename,'ab') as f:
+                f.write(filedata)
+        except Exception as e:
+            print(e)
+def getPoliceStations():
+    path = os.path.realpath(workingdir + "Senarios/Locations") + "/"
+    file = "policeStations.txt"
+    try:
+        send = ""
+        with open(path + file) as f:
+            lines = f.readlines()
+        for line in lines:
+            send = send + ":"+line
+        return send
+    except Exception as e:
+        print(e)
+        return "none"
