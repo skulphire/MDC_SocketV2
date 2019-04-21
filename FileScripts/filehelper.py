@@ -38,6 +38,10 @@ def getReport(folder,file, org="ADPS"):
         print(e)
         return "none"
 def createReport(folder, file, data, org="ADPS"):
+    if os.path.exists(os.path.realpath(workingdir + org + "-ReportDatabase/" + folder)):
+        print("true")
+    else:
+        os.mkdir(os.path.realpath(workingdir + org + "-ReportDatabase/" + folder))
     path = os.path.realpath(workingdir + org + "-ReportDatabase/" + folder) + "/"
     file = file+".txt"
     #report = data.split(",")
